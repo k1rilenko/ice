@@ -29,6 +29,35 @@
 			&-pagination
 				position relative
 				padding-top 3.7rem
+				&-bullet
+					margin 0 5px
+					width 10px
+					height 10px
+					background-color $w
+					opacity 1
+					&-active
+						box-shadow 0 0 0 2.5px $w
+					&:first-child
+						&.swiper-pagination-bullet-active
+							background $kaktus
+					&:nth-child(2)
+						&.swiper-pagination-bullet-active
+							background $plombirovna
+					&:nth-child(3)
+						&.swiper-pagination-bullet-active
+							background $raduga
+					&:nth-child(4)
+						&.swiper-pagination-bullet-active
+							background linear-gradient(204.03deg, #8A3918 0, #622C18 99.52%)
+					&:nth-child(5)
+						&.swiper-pagination-bullet-active
+							background $plombirovna
+					&:nth-child(6)
+						&.swiper-pagination-bullet-active
+							background $kaktus
+					&:nth-child(7)
+						&.swiper-pagination-bullet-active
+							background $capitan
 		.slider__container
 			background-color $w
 			border-radius 16px

@@ -2,7 +2,12 @@
 app.slider = {
 	init() {
 		const ruleSlider = new Swiper('.swiper-rules', this.options);
-		const heroSlider = new Swiper('.hero__slider .swiper-container', this.optionsHero);
+		let heroSlider = null;
+		window.addEventListener('load', () => {
+			if (window.innerWidth > 1280) {
+				heroSlider = new Swiper('.hero__slider .swiper-container', this.optionsHero);
+			}
+		});
 		this.runSlider('.rating__slider .swiper-container', this.optionsRating);
 		this.runSlider('.swiper-gifts', this.options);
 		this.destroySlider(ruleSlider, 1280);
