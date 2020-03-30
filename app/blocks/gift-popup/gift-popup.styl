@@ -1,0 +1,76 @@
+.gift-popup
+	display block
+	+below($lg)
+		min-height 100vh
+	&__wrapper
+		position relative
+		display flex
+		background-color $w
+		border-radius 20px
+		+below($md)
+			flex-direction column
+		+below($sm)
+			padding 0 3rem
+	&__container
+		position relative
+		padding 3rem 8%
+		+below($lg)
+			min-height 100vh
+		+below($sm)
+			padding 2rem 1.5rem 2.5rem
+	&__image
+		width 50%
+		padding 6.5rem 10rem 9.5rem
+		display flex
+		justify-content center
+		border-right 1px dashed $grey
+		+below($md)
+			width 100%
+			border-right none
+			padding 2.5rem 0 5rem
+		&-block
+			position relative
+	&__name
+		position absolute
+		bottom 0
+		left 0
+	&__form
+		width 50%
+		padding 9.4rem 10rem 8rem
+		display flex
+		justify-content center
+		border-left 1px dashed $grey
+		+below($md)
+			width 100%
+			border-left none
+			padding 0 0 4rem
+		&-wrapper
+			max-width 280px
+	&__value
+		color $blue
+		padding 0 5px
+	&__title
+		margin-bottom 1.7rem
+	&__text
+		margin-bottom 3.9rem
+		text-align center
+		font-size 1.8rem
+		line-height 1.39
+	.form__input
+		text-align center
+	.form__button
+		width 28rem
+	&__button
+		top 50%
+		transform translateY(-50%)
+		+below($lg)
+			display none
+		&_prev
+			left 5rem
+			transform translateY(-50%) rotate(180deg)
+		&_next
+			right 5rem
+	&__close
+		position absolute
+		right 20px
+		top 20px
