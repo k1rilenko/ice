@@ -12,15 +12,23 @@
 		background-image url(../images/promo-bg/1.jpg)
 		background-size 100%
 		background-position 0 100%
-		min-height: 69rem
+		min-height 100vh
+	+below($xl)
+		min-height 69rem
+	+above($lg)
+		padding-top 0
 	&__title
 		padding-top 4.3rem
 		margin-bottom 3.5rem
+		position relative
+		z-index 2
 		+above($xl)
 			font-size 4.5rem
 			line-height 1
 			text-align left
 			padding-top 39%
+		+above($xl)
+			padding-top 0
 	&__input-block
 		// padding-bottom 40rem
 	&__input-wrapper
@@ -30,6 +38,7 @@
 		border-radius 10px
 		background-image linear-gradient(204.03deg, #2BA6FF 0, #82DCFF 100%)
 		padding 4px
+		z-index 2
 	&__button
 		position absolute
 		right 14px
@@ -76,10 +85,27 @@
 			height 100%
 		&-img
 			width 590px
-			+above($xl)
+			+above($sm)
 				width 100%
-				height auto
+				height auto 
+			+above($lg)
+				height 100%
+				object-fit cover
+		picture 
+			+above($lg)
+				width 100%
+		
 	&__content
+		+above($lg)
+			position absolute
+			top 50%
+			left 50%
+			transform translate(-50%, -50%)
+			z-index 2
 		+above($xl)
 			width 380px
 			margin-left auto
+			position absolute
+			top 50% 
+			right 10%
+			transform translateY(-50%)		
