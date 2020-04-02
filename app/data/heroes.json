@@ -32,9 +32,9 @@
 	{
 		"link": "#",
 		"background": "eskimon",
-		"image": "eskimon.png",
+		"image": "eskimon2.png",
 		"name": "eskimon-title.png",
-		"alt": "Эскимон",
+		"alt": "Эскимон",  
 		"percent": "15",
 		"point": "1",
 		"imagewidthBackground": "eskimon.png"
