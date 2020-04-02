@@ -1,6 +1,5 @@
 .rating
-	display block
-	display none
+	display block 
 	margin-bottom 4rem
 	&__head
 		text-align center
@@ -116,56 +115,104 @@
 		color $blue
 		margin-bottom 2.3rem
 	&__slider
+		padding-bottom 5rem
+		+above($xl)
+			max-width 1300px
+			margin 0 auto
+		+above($xxl)
+			max-width 1600px
+			margin 0 auto
 		.swiper-pagination
 			position relative
 			bottom 0
 			padding-top 3.9rem
-		.swiper-button
-			+above($xl)
-				display block
-				width 6rem
-				height 6rem
-				background $w
+			z-index 4
+		.swiper
+			&-pagination-bullet
+				width 1.5rem
+				height 1.5rem
+				background-color $grey
 				border-radius 50%
-				background url(../images/arrow.svg) center no-repeat
-				background-size cover
-				&:after
-					display none
-				&.swiper-button-next
-					transform: rotate(180deg)
-		.swiper-slide
-			border: 5px solid red
-			&.swiper-slide-active
-				z-index 3
-				box-shadow 0 40px 10px 10px rgba(0,0,0,0.3)
-				&:before, &:after
-			&.swiper-slide-prev
-				margin-right -5rem
-				margin-left 5rem
-			&.swiper-slide-next
-				margin-left -5rem
-				margin-right 5rem
-			&.swiper-slide-nth-prev-2
-				margin-right -10rem
-				margin-left 10rem
-			&.swiper-slide-nth-next-2
-				margin-left -10rem
-				margin-right 10rem
-			&.swiper-slide-prev, &.swiper-slide-next
-				transform translateY(3rem) 
-				box-shadow 0 60px 10px 10px rgba(0,0,0,0.3)
-				z-index 2
-				&:before, &:after
-					top 5rem
-			&.swiper-slide-nth-prev-2, &.swiper-slide-nth-next-2
-				transform translateY(8rem) 
-				z-index 1
-			&.swiper-slide-nth-prev-3, &.swiper-slide-nth-next-3
-				transform translateY(11rem) 
-				z-index 1
-			&.swiper-slide-nth-prev-2
-				&:after
-					top: 8rem
-			&.swiper-slide-nth-next-2
-				&:before
-					top: 8rem	
+				opacity 1
+				margin .375rem
+				border 2.5px solid transparent 
+				transition .3s
+				&.swiper-pagination-bullet-active
+					background linear-gradient(195.7deg, #FFD84F -.15%, #FF8A00 100%)
+					border-color $grey
+					transform scale(1.5)
+			&-button
+				display none
+				+above($xl)
+					display block
+					width 6rem
+					height 6rem
+					border-radius 50%
+					background url(../images/arrow.svg) center no-repeat
+					background-size cover
+					border  2px solid $grey
+					&:after
+						display none
+					&.swiper-button-next
+						transform rotate(180deg)
+			&-slide 
+				transition .3s 
+				.rating__name
+					opacity 0
+					transition opacity .3s
+				.rating__image-wrap:before, .rating__image-wrap:after 
+					opacity 0 
+					transition opacity .3s
+				.rating__num-value
+					opacity 0
+					transition opacity .3s
+				.rating__button-wrapper
+					opacity 0
+					transition opacity .3s
+				&.swiper-slide-active
+					z-index 3
+					.rating__image-wrap:before, .rating__image-wrap:after 
+						opacity 1 
+					.rating__name
+						opacity 1
+					.rating__num-value
+						opacity 1
+					.rating__button-wrapper
+						opacity 1	
+				&.swiper-slide-prev, &.swiper-slide-next
+					opacity .8
+					transform scale(.8)
+					z-index 2
+				&.swiper-slide-nth-prev-2, &.swiper-slide-nth-next-2
+					opacity .4
+					transform scale(.6)
+					z-index 1
+				&.swiper-slide-prev
+					+above($xl)
+						margin-right -12rem
+						margin-left 12rem
+					+above($xxl)
+						margin-right -10rem
+						margin-left 10rem	
+				&.swiper-slide-next
+					+above($xl)
+						margin-left -12rem
+						margin-right 12rem
+					+above($xxl)
+						margin-left -10rem
+						margin-right 10rem	
+				&.swiper-slide-nth-prev-2
+					+above($xl)
+						margin-right -27rem
+						margin-left 27rem
+					+above($xxl)
+						margin-right -25rem 
+						margin-left 25rem	
+				&.swiper-slide-nth-next-2
+					+above($xl)
+						margin-left -27rem
+						margin-right 27rem
+					+above($xxl)
+						margin-left -25rem	
+						margin-right 25rem   
+	

@@ -7,8 +7,8 @@
 		&:before
 			position absolute
 			content ''
-			background linear-gradient(180deg, rgba(255, 255, 255, 0) 30.56%, rgba(0, 130, 223, 0.65) 100%);
-			opacity 0.2
+			background linear-gradient(180deg, rgba(255, 255, 255, 0) 30.56%, rgba(0, 130, 223, .65) 100%)
+			opacity .2
 			top 0 
 			left 0 
 			width 100%
@@ -77,7 +77,6 @@
 					display block
 					width 6rem
 					height 6rem
-					background $w
 					border-radius 50%
 					background url(../images/arrow.svg) center no-repeat
 					background-size cover
@@ -92,7 +91,7 @@
 			&-slide
 				display block
 				width 20%
-				transition 0.3s
+				transition .3s
 				+below($xl)
 					width 50%
 					margin-bottom 5.5rem
@@ -109,15 +108,12 @@
 							max-width 22rem
 							left 50%
 							transform translateX(-50%)
-				
-				
 				+above($xl)
 					.hero__wrapper 
 						height 32rem	
 					&.swiper-slide-active
 						z-index 3
-						box-shadow 0 40px 10px 10px rgba(0,0,0,0.3)
-						&:before, &:after
+						box-shadow 0 40px 10px 10px rgba(0, 0, 0, .3)
 					&.swiper-slide-prev
 						margin-right -5rem
 						margin-left 5rem
@@ -132,15 +128,12 @@
 						margin-right 10rem
 					&.swiper-slide-prev, &.swiper-slide-next
 						transform translateY(3rem) 
-						box-shadow 0 60px 10px 10px rgba(0,0,0,0.3)
+						box-shadow 0 60px 10px 10px rgba(0, 0, 0, .3)
 						z-index 2
 						&:before, &:after
 							top 5rem
 					&.swiper-slide-nth-prev-2, &.swiper-slide-nth-next-2
 						transform translateY(8rem) 
-						z-index 1
-					&.swiper-slide-nth-prev-3, &.swiper-slide-nth-next-3
-						transform translateY(11rem) 
 						z-index 1
 					&.swiper-slide-nth-prev-2
 						&:after 
@@ -152,10 +145,6 @@
 					.hero__wrapper 
 						height 38rem
 						width 100%
-
-
-					
-
 	&__container
 		padding 0 1.5rem
 	&__item
@@ -217,7 +206,6 @@
 				+above($xl)
 					max-width 100%
 					max-height 100%
-	
 	&__image-wrap
 		width 13rem
 		height 13rem
