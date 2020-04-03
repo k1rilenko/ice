@@ -3,13 +3,23 @@
 	&__wrapper
 		display flex
 		flex-direction column-reverse
+		position relative
+		+above($xl) 
+			padding-bottom 7rem
 	&__links
+		+above($xl) 
+			position absolute
+			left 14rem
+			top 4rem
 		&-href
 			text-decoration none
 			display flex
 			padding 3.25rem 1.5rem
 			border-top 2px solid $grey
 			align-items center
+			+above($xl) 
+				border none 
+				padding 1rem 1.5rem
 		&-icon
 			margin-right 2.7rem
 		&-text
@@ -17,18 +27,27 @@
 			line-height 1.43
 			color $blue
 			font-weight 700
+			+above($xl)
+				color $b
 	&__data
 		&-list
 			padding 0 3.5rem
+			+above($xl) 
+				display flex
+				justify-content flex-end
 		&-href
 			display flex
 			flex-direction column
 			padding 3.7rem 2rem 3.3rem
 			text-decoration none
+			+above($xl)
+				padding 3.7rem 4rem 3.3rem
 		&-item
 			border-bottom 2px solid $grey
 			&:last-child
 				border-bottom-color transparent
+			+above($xl) 
+				border none
 		&-value
 			font-size 2.2rem
 			line-height 1.36

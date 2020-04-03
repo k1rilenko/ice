@@ -75,6 +75,8 @@
 		height 28.6rem
 		border-radius 50%
 		margin-bottom 1.7rem
+		margin-left auto
+		margin-right auto
 		&:before
 		&:after
 			position absolute
@@ -143,7 +145,7 @@
 					transform scale(1.5)
 			&-button
 				display none
-				+above($xl)
+				+above($md)
 					display block
 					width 6rem
 					height 6rem
@@ -188,30 +190,42 @@
 					transform scale(.6)
 					z-index 1
 				&.swiper-slide-prev
+					+above($lg)
+						margin-right -6rem
+						margin-left 6rem
 					+above($xl)
-						margin-right -12rem
-						margin-left 12rem
+						margin-right -5rem
+						margin-left 5rem
 					+above($xxl)
 						margin-right -10rem
 						margin-left 10rem	
 				&.swiper-slide-next
+					+above($lg)
+						margin-left -6rem
+						margin-right 6rem
 					+above($xl)
-						margin-left -12rem
-						margin-right 12rem
+						margin-left -5rem
+						margin-right 5rem
 					+above($xxl)
 						margin-left -10rem
 						margin-right 10rem	
 				&.swiper-slide-nth-prev-2
+					+above($lg)
+						margin-right -15rem
+						margin-left 15rem 
 					+above($xl)
-						margin-right -27rem
-						margin-left 27rem
+						margin-right -15rem
+						margin-left 15rem
 					+above($xxl)
 						margin-right -25rem 
 						margin-left 25rem	
 				&.swiper-slide-nth-next-2
+					+above($lg)
+						margin-left -15rem
+						margin-right 15rem
 					+above($xl)
-						margin-left -27rem
-						margin-right 27rem
+						margin-left -15rem
+						margin-right 15rem
 					+above($xxl)
 						margin-left -25rem	
 						margin-right 25rem   
