@@ -2,6 +2,8 @@
 	display block
 	margin 0 auto
 	text-align center
+	+above($xl)
+		background $grey
 	&__link
 		display inline-block
 		padding 1.5rem 0
@@ -12,3 +14,5 @@
 	&__name
 		font-weight 700
 		text-decoration underline
+		+above($xl)
+			text-decoration none

@@ -3,6 +3,9 @@
 	&__wrapper
 		display flex
 		flex-direction column
+	&__container 
+		+above($xl) 
+			padding-top 7rem
 	&__link-href
 		display flex
 		justify-content space-between
@@ -13,13 +16,38 @@
 		padding 5.2rem 1.5rem
 		align-items center
 		border-bottom 2px  solid $grey
+		+above($xl) 
+			border none 
+			padding 1rem 5.5rem
+			display inline-block
+			span
+				margin-right 1rem
+	&__link-block 
+		+above($xl)
+			order 2
+	&__link-list 
+		+above($xl)
+			margin-left 10rem
 	&__promo
 		position relative
+		+above($xl)
+			order 1
 		&-image
 			width 100%
+			&.xl
+				display none
+			+above($xl)
+				&.xl
+					display block
+					height 100%
+					object-fit cover
+				&:not(.xl)
+					display none
 		&-img-block
 			position relative
 			line-height 0
+			+above($xl)
+				height 22rem
 		&-overlay
 			position absolute
 			width 100%
@@ -38,12 +66,32 @@
 			height 100%
 			justify-content space-between
 			align-items center
+			+above($xl) 
+				width 100%
+				flex-direction row
+				align-items center
+				justify-content space-around
 		&-logo
 			max-width 126px
 			height auto
+			+above($xl)
+				max-width 155px
+				flex-basis 35%
 		&-text
 			font-size 1.4rem
 			line-height 1.43
 			color $w
 			font-weight 700
 			text-align center
+			br 
+				display none
+			+above($xl)
+				font-family b
+				font-weight normal
+				flex-basis 65%
+				text-align left
+				font-size 2.2rem
+				font-style normal
+				text-transform uppercase
+				br
+					display block
