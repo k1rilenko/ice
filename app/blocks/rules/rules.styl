@@ -10,9 +10,12 @@
 	&__slider
 		.swiper-slide
 			height 440px
+			+above($lg) 
+				width 32%
+				min-height 52rem
 			+above($xl)
 				width 38rem
-				height 52rem
+				min-height 52rem
 			&:first-child
 				.slider__image-wrap
 					padding-top 2.6rem
@@ -22,11 +25,16 @@
 				.slider__rule
 					padding 0 3.5rem
 		.swiper-wrapper
+			+above($md)
+				padding-bottom 4rem
+				display flex
+				justify-content space-around
 			+above($xl)
 				max-width 1180px
 				margin 0 auto 
 				justify-content space-between
 				box-sizing border-box
+				
 		.swiper-pagination
 			position relative
 			padding-top 3.7rem
@@ -55,6 +63,9 @@
 			height 100%
 			box-shadow 0 1px 1px rgba(0, 56, 166, .08), 0 2px 2px rgba(0, 56, 166, .08), 0 4px 4px rgba(0, 56, 166, .08), 0 8px 8px rgba(0, 56, 166, .08), 0 16px 16px rgba(0, 56, 166, .08) 
 			overflow visible
+			+above($xl)
+				padding 0 2rem
+			
 		.slider__image-wrap
 			position relative
 			margin-bottom 3.4rem

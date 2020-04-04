@@ -4,23 +4,34 @@
 	overflow hidden
 	&__icecream 
 		display none
-		+above($md)
+		+above($lg)
 			display block
 			position absolute
-			z-index 1
+			z-index 2
 			pointer-events none
 			&.left
 				left 0 
 				top 30%
-				max-width 140px
+				+above($lg)
+					max-width 110px
+				+above($xxl)
+					max-width 140px
 			&.right
 				right 0
 				bottom 20%
-				max-width 260px
+				+above($lg)
+					max-width 200px
+				+above($xxl)
+					max-width 260px		
 			&.bottom
 				bottom -8rem
 				left 50%
-				max-width 370px
+				+above($lg)
+					max-width 265px
+					transform translateX(-50%)
+				+above($xxl)
+					max-width 370px
+					transform translateX(0)
 	&__background
 		position absolute
 		top 20px
@@ -52,18 +63,30 @@
 		background linear-gradient(342.98deg, #63D4FF -13.23%, #008EF4 87.33%)
 		padding-bottom 3rem
 		+above($md)
+			.swiper-pagination
+				display none
+			.swiper-wrapper 
+				max-width 700px 
+				margin 0 auto
+				+above($md)
+					flex-direction row
+					flex-wrap wrap
+					.swiper-slide
+						flex-basis calc(50% - 2rem)	
+						margin 1rem
+		+above($lg)
 			padding-bottom 13rem
-		.swiper-wrapper 
-			max-width 1200px
-			margin 0 auto
-			+above($md)
-				flex-direction row
-				flex-wrap wrap
-				.swiper-slide
-					flex-basis calc(33% - 2rem)
-					margin 1rem
-				& + .swiper-pagination
-					display none
+			.swiper-wrapper 
+				max-width 1200px
+				margin 0 auto
+				+above($lg)
+					flex-direction row
+					flex-wrap wrap
+					.swiper-slide
+						flex-basis calc(33% - 2rem)
+						margin 1rem
+					& + .swiper-pagination
+						display none
 		.swiper
 			&-slide
 				height 455px
