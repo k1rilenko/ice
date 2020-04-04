@@ -1,6 +1,26 @@
 .gift
 	display block
 	position relative
+	overflow hidden
+	&__icecream 
+		display none
+		+above($md)
+			display block
+			position absolute
+			z-index 1
+			pointer-events none
+			&.left
+				left 0 
+				top 30%
+				max-width 140px
+			&.right
+				right 0
+				bottom 20%
+				max-width 260px
+			&.bottom
+				bottom -8rem
+				left 50%
+				max-width 370px
 	&__background
 		position absolute
 		top 20px
@@ -8,6 +28,8 @@
 		svg
 			width 100%
 			height 300px
+		+above($md)
+			top 15rem
 	&__title
 		position relative
 		z-index 3
@@ -20,9 +42,28 @@
 		font-size 2rem
 		line-height 1.5
 		margin-bottom 4rem
+		br 
+			display none 
+		+above($md)
+			margin-bottom 10rem
+			br 
+				display block
 	&__slider
 		background linear-gradient(342.98deg, #63D4FF -13.23%, #008EF4 87.33%)
 		padding-bottom 3rem
+		+above($md)
+			padding-bottom 13rem
+		.swiper-wrapper 
+			max-width 1200px
+			margin 0 auto
+			+above($md)
+				flex-direction row
+				flex-wrap wrap
+				.swiper-slide
+					flex-basis calc(33% - 2rem)
+					margin 1rem
+				& + .swiper-pagination
+					display none
 		.swiper
 			&-slide
 				height 455px

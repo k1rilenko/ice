@@ -2,20 +2,23 @@
 app.slider = {
 	init() {
 		const ruleSlider = new Swiper('.swiper-rules', this.options);
-		const giftSlider = new Swiper('.gift__slider .swiper-container',  this.options);
+		const giftSlider = new Swiper('.gift__slider .swiper-container',  this.optionsGifts);
 		let heroSlider = null;
 		window.addEventListener('load', () => {
 			if (window.innerWidth >= 1280) {
-				heroSlider = new Swiper('.hero__slider .swiper-container', this.optionsHero);
+				const heroSlider = new Swiper('.hero__slider .swiper-container', this.optionsHero);
 			}
+
+			if (window.innerWidth < 991) {
+				giftSlider()
+			} 
 		});
 		
 		this.runSlider('.rating__slider .swiper-container', this.optionsRating);
-		this.runSlider('.gift__slider .swiper-container', this.options);
 		this.destroySlider(ruleSlider, 1280);
-		this.destroySlider(giftSlider, 768);
+		this.destroySlider(giftSlider, 991);
 		app.common.initStyle('swiper.min');
-	},
+	}, 
 	runSlider(selector, options) {
 		const slider = new Swiper(selector, options);
 	},
@@ -28,6 +31,15 @@ app.slider = {
 		centeredSlides: true,
 		spaceBetween: 10
 	},
+	optionsGifts: {
+		pagination: {
+			el: '.gift__slider .swiper-pagination',
+			clickable: true
+		},
+		slidesPerView: 1.15,
+		centeredSlides: true,
+		spaceBetween: 10,
+	},
 	optionsRating: {
 		pagination: {
 			el: '.swiper-pagination',
@@ -38,7 +50,7 @@ app.slider = {
 		spaceBetween: 10,
 		breakpoints: {
 			991: {
-				slidesPerView: 5, 
+				slidesPerView: 5,
 				spaceBetween: 0,
 				slidesPerGroup: 1,
 				centeredSlides: true,
