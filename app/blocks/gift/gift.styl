@@ -79,6 +79,7 @@
 			.swiper-wrapper 
 				max-width 1200px
 				margin 0 auto
+				padding-bottom 2rem
 				+above($lg)
 					flex-direction row
 					flex-wrap wrap
@@ -90,6 +91,11 @@
 		.swiper
 			&-slide
 				height 455px
+				text-decoration none
+				color $b
+				transition .3s
+				&:hover
+					transform scale(1.02)
 			&-pagination
 				position relative
 				padding-top 3.7rem
@@ -127,6 +133,9 @@
 			border-radius 16px
 			height 100%
 			padding-top 5rem
+			box-shadow 0 1px 1px rgba(0, 56, 166, .08), 0 2px 2px rgba(0, 56, 166, .08), 0 4px 4px rgba(0, 56, 166, .08), 0 8px 8px rgba(0, 56, 166, .08), 0 16px 16px rgba(0, 56, 166, .08)
+			+above($xl)
+				border-radius 20px
 		.slider__wrapper
 			display flex
 			height 100%
