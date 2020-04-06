@@ -16,6 +16,7 @@ include /blocks/photo/photo
 include /blocks/stat/stat
 include /blocks/extra/extra
 include /blocks/summ/summ
+include /blocks/hero-list/hero-list
 
 block head
 	- var pageTitle = 'hero';
@@ -28,4 +29,5 @@ block content
 	+stat(getData(hero))
 	+extra(getData(hero))
 	+summ(getData(hero))
+	+hero-list(getData(hero))
 	+footer

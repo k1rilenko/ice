@@ -12,7 +12,7 @@ mixin gift()
 			.swiper-container.swiper-gifts 
 				.swiper-wrapper
 					for slide in getData('gifts')
-						a(href="#gift-modal").swiper-slide.gift-modal 
+						a(href="javascript:;", data-fancybox, data-type="ajax", data-src="/vote-popup.html").swiper-slide.gift-modal
 							+e('div').container
 								+e('div').wrapper
 									+e('div').image-wrap

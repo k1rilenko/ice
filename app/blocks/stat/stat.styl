@@ -4,11 +4,17 @@
 	&__wrapper
 		display flex
 		flex-direction column
+		+above($md)
+			flex-direction row
+			flex-wrap wrap
 	&__rating
 		display flex
 		flex-direction column
 		align-items center
-		margin-bottom 6rem
+		padding-bottom 6rem
+		+above($md)
+			flex-basis 50%
+			border-right 2px dashed $grey
 		&-icon
 			margin-bottom 3rem
 		&-value
@@ -27,6 +33,10 @@
 		display flex
 		align-items flex-end
 		justify-content space-between
+		padding-bottom 4.6rem
+		+above($md)
+			flex-basis 50%
+			justify-content space-around
 		&-col
 			display flex
 			flex-direction column
@@ -35,6 +45,7 @@
 			font-size 3.5rem
 			line-height 4rem
 			font-family $bor
+			color #B5B5B5
 			&_blue
 				color $blue
 		&-title
@@ -44,20 +55,61 @@
 		&-image-block
 			margin-bottom 4rem
 	&__char
+		+above($md)
+			flex-basis 100%
 		&-list
 			display flex
 			flex-direction column
 			padding 1.6rem 0
 			border-top 2px dashed $grey
 			border-bottom 2px dashed $grey
+			+above($md)
+				flex-direction row
+				justify-content start
+				padding 2.5rem 0
+			+above($xl)
+				padding 5rem 0
 		&-item
 			display flex
 			justify-content space-between
 			padding 3.3rem 0
 			align-items center
+			position relative
+			&:after 
+				content ''
+				display block
+				position absolute
+				top 54px
+				left 0
+				right 0
+				height 2px
+				background transparent linear-gradient(to right, #f3f3f3 0, #f3f3f3 6px, transparent 2px, transparent 2px) repeat-x scroll 0 0/12px 4px
+				z-index 1
+				width 100%
+			+above($md)
+				flex-basis 33%
+				flex-direction column
+				&:after 
+					display none
+				&:nth-child(2)
+					border-left 2px dashed $grey
+					border-right 2px dashed $grey
+
 		&-title
 			font-size 1.8rem
 			line-height 1.39
+			position relative
+			background $w
+			z-index 2
+			padding-right .25rem
+			+above($md)
+				margin-bottom 1rem
 		&-value
 			font-size 2.5rem
 			line-height 1.2
+			background $w
+			z-index 2
+			padding-left .25rem
+			+above($md)
+				color $blue
+				font-size 4rem

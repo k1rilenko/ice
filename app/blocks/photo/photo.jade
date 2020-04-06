@@ -4,12 +4,20 @@ mixin photo(hero)
 			.container
 				+e.link-desktop
 					+e('a').link._prev(href="#{hero.prev}")
+						+b('svg').icon._arrow.rotate-left
+							use(xlink:href='#arrow')
 					+e('a').link._next(href="#{hero.next}")
+						+b('svg').icon._arrow.rotate-right
+							use(xlink:href='#arrow')
 				+e.img-wrapper
 					+e.name
-						+e('img').name-value(src="./assets/images/heroes/#{hero.name}")
+						+e('picture')
+							source(srcset="./assets/images/heroes/#{hero.nameLarge}" media="(min-width: 1200px)") 
+							+e('img').name-value(src="./assets/images/heroes/#{hero.name}", alt="#{hero.title}")
 					+e.image
-						+e('img').image-value(src="./assets/images/heroes/#{hero.image}" alt="#{hero.title}")
+						+e('picture')
+							source(srcset="./assets/images/heroes/#{hero.imageLarge}" media="(min-width: 1200px)") 
+							+e('img').image-value(src="./assets/images/heroes/#{hero.image}", alt="#{hero.title}")
 			+e.background
 				+b('svg').icon._wave
 					use(xlink:href='#wave')
