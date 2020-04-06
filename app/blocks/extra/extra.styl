@@ -3,14 +3,21 @@
 	&__wrapper
 		display flex
 		flex-direction column
+		+above($md)
+			flex-direction row
 	&__block
 		position relative
 		display flex
 		flex-direction column
 		align-items center
 		padding 5.5rem 0
+		+above($md)
+			flex-basis 50%
+			&:last-child
+				border-left 2px dashed $grey
+				border-bottom 2px dashed $grey
 		&_weapon
-			border-bottom 2px dotted $grey
+			border-bottom 2px dashed $grey
 	&__image-block
 		max-width 25rem
 		margin 0 auto

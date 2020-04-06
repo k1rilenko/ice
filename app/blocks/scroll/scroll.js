@@ -10,9 +10,10 @@ app.scroll = {
         behavior: 'smooth'
       });
     } 
-
+    if (scrollBtn) {
+      
     window.onscroll = () => scrollFunction()
-
+    
     const scrollFunction = () => {
       if (document.documentElement.clientWidth > 991) {
         if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
@@ -21,15 +22,14 @@ app.scroll = {
           scrollBtn.style.opacity = "0";
         }
       } else {
-        if (document.body.scrollTop > 2000 || document.documentElement.scrollTop > 2000) {
-          scrollBtn.style.opacity = "1";
-        } else {
-          scrollBtn.style.opacity = "0";
+          if (document.body.scrollTop > 2000 || document.documentElement.scrollTop > 2000) {
+            scrollBtn.style.opacity = "1";
+          } else {
+            scrollBtn.style.opacity = "0";
+          }
         }
       }
-      
-    } 
-
-    scrollBtn.addEventListener('click', scrollToTop);
+      scrollBtn.addEventListener('click', scrollToTop);
+    } // end init
   }
 }

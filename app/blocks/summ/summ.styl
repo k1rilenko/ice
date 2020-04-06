@@ -3,6 +3,9 @@
 	position relative
 	padding-top 10.3rem
 	padding-bottom 3rem
+	overflow hidden
+	+above($xl)
+		padding-bottom 10rem
 	&:after
 		top 0
 		position absolute
@@ -11,14 +14,49 @@
 		height 20%
 		background-image url(../images/summ-vawe.svg)
 		background-repeat repeat-x
+		+above($md)
+			background-repeat no-repeat
+			background-size cover
+		+above($lg)
+			height 30rem
+		+above($xl)
+			height 40rem
+		+above($xxl)
+			height 50rem
 	&__wrapper
 		margin 0 1.5rem
 		padding 5rem 2rem .6rem
 		background-color $w
 		border-radius 20px
+		position relative
+		z-index 1
 		box-shadow 0 1px 1px rgba(183, 99, 0, .08), 0 2px 2px rgba(183, 99, 0, .08), 0 4px 4px rgba(183, 99, 0, .08), 0 8px 8px rgba(183, 99, 0, .08), 0 16px 16px rgba(183, 99, 0, .08)
+		+above($md)
+			margin 0 auto
+			max-width 80%
+		+above($lg)
+			margin 0 auto
+			max-width 780px
+		+above($xxl)
+			margin 0 auto
+			max-width 880px
 	&__background
 		display none
+		position absolute
+		z-index 1
+		right 0
+		bottom -5px
+		pointer-events none
+		img 
+			width 100%
+			height 100%
+			object-fit cover
+		+above($lg)
+			max-width 30%
+			display block
+		+above($xxl)
+			display block
+			max-width 40%
 	&__title
 		margin-bottom 2rem
 	&__text

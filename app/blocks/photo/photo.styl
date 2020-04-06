@@ -2,16 +2,110 @@
 	display block
 	position relative
 	&__wrapper
-		padding-top 6rem
+		padding-top 10rem
+		+above($lg)
+			min-height 45rem
+		+above($xxl)
+			min-height 85rem
 		&_hrust
 			background $hrust
+		+above($md)
+			&:before
+				content ''
+				position absolute
+				left 50%
+				top 50%
+				transform translate(-50%, -50%)
+				width 55rem
+				height 55rem
+				border-radius 50%
+				background rgba(255, 255, 255, .1)
+				pointer-events none
+				z-index 0
+				+above($xxl)
+					width 100rem
+					height 100rem
+			&:after
+				content ''
+				position absolute
+				left 50%
+				top 50%
+				transform translate(-50%, -50%)
+				width 40rem
+				height 40rem
+				border-radius 50%
+				background rgba(255, 255, 255, .1)
+				pointer-events none
+				z-index 0
+				+above($xxl)
+					width 80rem
+					height 80rem
 	&__background
 		width 100%
 		position absolute
 		bottom -1px
 		height 75px
+		z-index 2
+		+above($xxl)
+			height 200px  
+			.icon_wave
+				height 205px
 	&__img-wrapper
 		position relative
+		pointer-events none
+	&__name 
+		text-align center
+		position relative
+		z-index 1
+		img 
+			width 100%
+			+above($md)
+				width auto
+			+above($lg)
+				max-width 350px
+				width 100%	
+			+above($xl)
+				max-width 400px
+				width 100%
+			+above($xxl)
+				max-width 650px
+				width 100%
 	&__image
 		display flex
 		justify-content center
+		margin-top -7rem
+		position relative
+		z-index 1
+		pointer-events none 
+		+above($lg)
+			margin-top 0
+		+above($xxl)
+			margin-top -13rem
+		img 
+			width 100%
+			+above($md)
+				width auto
+			+above($lg)
+				max-width 360px
+				width 100%
+			+above($xxl)
+				max-width 500px 
+				min-width 400px
+				width 100%
+	&__link 
+		border-radius 50%
+		display flex
+		justify-content center
+		align-items center
+		width 6rem
+		height 6rem
+		background transparent
+		border 1px solid $w
+		top 50% 
+		position absolute
+		transform translateY(-50%)
+		&_prev 
+			left 1.5rem
+		&_next 
+			right 1.5rem
+ 
