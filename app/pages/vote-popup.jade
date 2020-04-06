@@ -2,12 +2,12 @@ extends /blocks/layout-default/layout-default
 
 include /blocks/header/header
 include /blocks/sprite/sprite
-include /blocks/gift-popup/gift-popup
+include /blocks/vote-popup/vote-popup
 
 block head
 	- var pageTitle = 'rating';
 
 block content
 	+sprite
-	+gift-popup(getData('hrust'))
+	+vote-popup(getData('hrust'))
 

@@ -33,8 +33,8 @@ mixin rating()
 											+e('span').percent= slide.percent + "%"
 											+e('span').point= slide.point + " голосов"
 										+e.button-wrapper
-											+e('button').button.button._success Голосовать
-
+											+e('button')(href="javascript:;", data-fancybox, data-type="ajax", data-src="/vote-popup.html").button.button._success Голосовать
+ 
 					.swiper-pagination
 
 					.swiper-button-prev.swiper-button
