@@ -1,6 +1,8 @@
 .top
 	padding-top 10rem
 	display block
+	position relative
+	overflow hidden
 	&__wrapper
 		background-color $blue
 		background-image url(../images/top-wave.png)
@@ -9,8 +11,61 @@
 		flex-direction column
 		align-items center
 		overflow hidden
+		+above($sm)		
+			background linear-gradient(183.69deg, #008EF4 -.15%, #63D4FF 100%)	
+			&:before
+				content ''
+				position absolute
+				left 0
+				top 28rem
+				background url(../images/top_xl_wave.svg) center no-repeat
+				background-size cover
+				width 100%
+				height 27.6rem	
+		+above($md)
+			padding-bottom 5rem
+			background linear-gradient(183.69deg, #008EF4 -.15%, #63D4FF 100%)
+			align-items flex-start
+			.top__block
+				&_text
+					margin-left 10rem
+				&_background
+					right 32rem
+			&:before
+				content ''
+				position absolute
+				left 0
+				top auto
+				bottom 29rem
+				background url(../images/top_xl_wave.svg) center no-repeat
+				background-size cover
+				width 100%
+				height 27.6rem
+			&:after
+				content ''
+				position absolute
+				left 0
+				bottom calc(29rem + 27.6rem)
+				width 100%
+				height calc(100% - 29rem - 27.6rem)
+				background $w		
+		+above($xl)
+			.top__block		
+				&_background 
+					right 15rem
+		+above($xxl)
+			align-items center
+			.top__block
+				&_text
+					margin-left 0
+				&_background 
+					right -10rem
 	&__head
 		text-align center
+		position relative
+		z-index 2
+		+above($md)
+			margin-bottom 8rem
 	&__icon
 		margin-bottom 4.6rem
 	&__subtitle
@@ -19,8 +74,20 @@
 		color $b
 		margin-bottom 3rem
 	&__block
+		position relative
+		z-index 2
 		&_background
 			line-height 0
+			img 	
+				max-width 100%
+			+above($md)
+				position absolute
+				right 0
+				bottom 0
+				width 50%
+				z-index 1
+				img 
+					max-width inherit 
 		&_text
 			padding 0 1.5rem
 		&_page
@@ -43,6 +110,8 @@
 		border-radius 20px
 		background-color $w
 		margin-bottom 4rem
+		+above($xl)
+			max-width 580px
 		&-row
 			display flex
 			border-bottom 2px solid $grey
@@ -54,23 +123,37 @@
 				color $dgrey
 				text-transform lowercase
 				padding 1.5rem 1rem
+				+above($xl)
+					padding 1rem 
+					&:not(:first-child)
+						padding 1rem 2.5rem
 				&:first-child
 					font-size 0
+					+above($xl)
+						font-size 1.4rem
 		&-date
 			font-size 2rem
 			color $b
 			padding 2.5rem 1rem
+			+above($xl)
+				padding 2.5rem
 			&:first-child
 				width 50px
 				text-align center
 				font-weight 700
 				border-right 2px solid $grey
+				+above($xl)
+					width 8rem
 			&:nth-child(2)
 				width 110px
 				border-right 2px solid $grey
+				+above($xl)
+					width 24rem
 			&:last-child
 				width 130px
 				text-align right
+				+above($xl)
+					width 24rem
 		&-body &
 			&-row
 				&:last-child

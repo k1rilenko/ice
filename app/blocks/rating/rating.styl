@@ -1,6 +1,7 @@
 .rating
 	display block 
 	margin-bottom 4rem
+	position relative
 	&__head
 		text-align center
 	&__icon
@@ -153,6 +154,7 @@
 					background url(../images/arrow.svg) center no-repeat
 					background-size cover
 					border  2px solid $grey
+					z-index 3
 					&:after
 						display none
 					&.swiper-button-next
@@ -191,42 +193,31 @@
 					z-index 1
 				&.swiper-slide-prev
 					+above($lg)
-						margin-right -6rem
-						margin-left 6rem
+						transform translateX(6rem) scale(.8)
 					+above($xl)
-						margin-right -5rem
-						margin-left 5rem
+						transform translateX(5rem) scale(.8)
 					+above($xxl)
-						margin-right -10rem
-						margin-left 10rem	
+						transform translateX(10rem) scale(.8)	
 				&.swiper-slide-next
 					+above($lg)
-						margin-left -6rem
-						margin-right 6rem
+						transform translateX(-6rem) scale(.8)
 					+above($xl)
-						margin-left -5rem
-						margin-right 5rem
+						transform translateX(-5rem) scale(.8)
 					+above($xxl)
-						margin-left -10rem
-						margin-right 10rem	
+						transform translateX(-10rem) scale(.8)
 				&.swiper-slide-nth-prev-2
 					+above($lg)
-						margin-right -15rem
-						margin-left 15rem 
+						transform translateX(15rem) scale(.6) 
 					+above($xl)
-						margin-right -15rem
-						margin-left 15rem
-					+above($xxl)
-						margin-right -25rem 
-						margin-left 25rem	
+						transform translateX(15rem) scale(.6)
+					+above($xxl) 
+						transform translateX(25rem) scale(.6)
 				&.swiper-slide-nth-next-2
 					+above($lg)
-						margin-left -15rem
-						margin-right 15rem
+						transform translateX(-15rem) scale(.6)
 					+above($xl)
-						margin-left -15rem
-						margin-right 15rem
+						transform translateX(-15rem) scale(.6)
 					+above($xxl)
-						margin-left -25rem	
-						margin-right 25rem   
+						transform translateX(-25rem) scale(.6)
+
 	

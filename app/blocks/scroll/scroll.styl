@@ -1,0 +1,24 @@
+.scroll
+	position fixed
+	right 4rem
+	bottom 6rem
+	width 6rem
+	height 6rem
+	z-index 999
+	+below($md)
+		right 1rem
+		bottom .5rem
+		width 4rem
+		height 4rem
+	&__link 
+		display flex 
+		justify-content center
+		align-items center
+		opacity 0 
+		transition .3s
+		width 100%
+		height 100%
+		border-radius 50%
+		background $grey
+
+  

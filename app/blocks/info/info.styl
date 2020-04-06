@@ -4,7 +4,7 @@
 		display flex
 		flex-direction column
 	&__container 
-		+above($xl) 
+		+above($lg) 
 			padding-top 7rem
 	&__link-href
 		display flex
@@ -16,27 +16,35 @@
 		padding 5.2rem 1.5rem
 		align-items center
 		border-bottom 2px  solid $grey
-		+above($xl) 
+		transition .3s
+		&:hover 
+			color $blue
+		+above($lg) 
 			border none 
 			padding 1rem 5.5rem
 			display inline-block
 			span
 				margin-right 1rem
+		+above($xxl)
+			padding 1rem 1.5rem
 	&__link-block 
-		+above($xl)
+		+above($lg)
 			order 2
+		+above($xxl)
+			width 120rem 
+			margin 0 auto 
 	&__link-list 
 		+above($xl)
 			margin-left 10rem
 	&__promo
 		position relative
-		+above($xl)
+		+above($sm)
 			order 1
 		&-image
 			width 100%
 			&.xl
 				display none
-			+above($xl)
+			+above($sm)
 				&.xl
 					display block
 					height 100%
@@ -46,7 +54,7 @@
 		&-img-block
 			position relative
 			line-height 0
-			+above($xl)
+			+above($sm)
 				height 22rem
 		&-overlay
 			position absolute
@@ -66,15 +74,19 @@
 			height 100%
 			justify-content space-between
 			align-items center
-			+above($xl) 
+			+above($sm) 
 				width 100%
 				flex-direction row
 				align-items center
 				justify-content space-around
+			+above($xxl)
+				max-width 120rem 
+				left 50%
+				transform translateX(-50%)
 		&-logo
 			max-width 126px
 			height auto
-			+above($xl)
+			+above($sm)
 				max-width 155px
 				flex-basis 35%
 		&-text
@@ -85,7 +97,7 @@
 			text-align center
 			br 
 				display none
-			+above($xl)
+			+above($sm)
 				font-family b
 				font-weight normal
 				flex-basis 65%
@@ -93,5 +105,8 @@
 				font-size 2.2rem
 				font-style normal
 				text-transform uppercase
+			+above($lg)
 				br
 					display block
+			+above($xxl)
+				flex-basis 60%

@@ -1,31 +1,55 @@
 /* eslint-disable no-unused-vars */
 app.slider = {
 	init() {
-		const ruleSlider = new Swiper('.swiper-rules', this.options);
-		const giftSlider = new Swiper('.gift__slider .swiper-container', this.options);
+		const ruleSlider = new Swiper('.swiper-rules', this.optionsRule);
+		const giftSlider = new Swiper('.gift__slider .swiper-container',  this.optionsGifts);
+
 		let heroSlider = null;
 		window.addEventListener('load', () => {
 			if (window.innerWidth >= 1280) {
-				heroSlider = new Swiper('.hero__slider .swiper-container', this.optionsHero);
+				const heroSlider = new Swiper('.hero__slider .swiper-container', this.optionsHero);
 			}
 		});
 		this.runSlider('.rating__slider .swiper-container', this.optionsRating);
-		this.runSlider('.gift__slider .swiper-container', this.options);
-		this.destroySlider(ruleSlider, 1280);
+		this.destroySlider(ruleSlider, 991);
 		this.destroySlider(giftSlider, 768);
+		
 		app.common.initStyle('swiper.min');
-	},
+	}, 
 	runSlider(selector, options) {
 		const slider = new Swiper(selector, options);
 	},
 	options: {
 		pagination: {
-			el: '.swiper-pagination',
+			el: '.swiper-rules .swiper-pagination',
 			clickable: true
 		},
 		slidesPerView: 1.15,
 		centeredSlides: true,
 		spaceBetween: 10
+	},
+	optionsRule: {
+		pagination: {
+			el: '.swiper-rules .swiper-pagination',
+			clickable: true
+		},
+		slidesPerView: 1.15,
+		centeredSlides: true,
+		spaceBetween: 10,
+		breakpoints: {
+			576: {
+				slidesPerView: 1,
+			},
+		},
+	},
+	optionsGifts: {
+		pagination: {
+			el: '.gift__slider .swiper-pagination',
+			clickable: true
+		},
+		slidesPerView: 1.15,
+		centeredSlides: true,
+		spaceBetween: 10,
 	},
 	optionsRating: {
 		pagination: {
@@ -97,7 +121,7 @@ app.slider = {
 				$('.hero__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').next().next().addClass('swiper-slide-nth-next-2');
 			}
 		}
-	},
+	}, 
 
 	destroySlider(el, size) {
 		window.addEventListener('resize', () => {

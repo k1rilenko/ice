@@ -1,5 +1,8 @@
 .contact
 	display block
+	+above($xxl)
+		max-width 120rem 
+		margin 0 auto 
 	&__wrapper
 		display flex
 		flex-direction column-reverse
@@ -11,6 +14,8 @@
 			position absolute
 			left 14rem
 			top 4rem
+		+above($xxl)
+			left 10rem
 		&-href
 			text-decoration none
 			display flex
@@ -25,8 +30,10 @@
 		&-text
 			font-size 1.4rem
 			line-height 1.43
-			color $blue
 			font-weight 700
+			transition .3s
+			&:hover 
+				color $blue
 			+above($xl)
 				color $b
 	&__data
@@ -40,6 +47,9 @@
 			flex-direction column
 			padding 3.7rem 2rem 3.3rem
 			text-decoration none
+			&:hover 
+				.contact__data-value
+					color $blue
 			+above($xl)
 				padding 3.7rem 4rem 3.3rem
 		&-item
@@ -52,5 +62,6 @@
 			font-size 2.2rem
 			line-height 1.36
 			color $b
+			transition .3s
 		&-icon
 			margin-bottom 1.6rem
