@@ -1,35 +1,32 @@
 /* eslint-disable no-unused-vars */
 app.scroll = {
-  init() {
-    const scrollBtn = document.getElementById('scroll-to-top')
-    const scrollToTop = (e) => {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
-    } 
-
-    window.onscroll = () => scrollFunction()
-
-    const scrollFunction = () => {
-      if (document.documentElement.clientWidth > 991) {
-        if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
-          scrollBtn.style.opacity = "1";
-        } else {
-          scrollBtn.style.opacity = "0";
-        }
-      } else {
-        if (document.body.scrollTop > 2000 || document.documentElement.scrollTop > 2000) {
-          scrollBtn.style.opacity = "1";
-        } else {
-          scrollBtn.style.opacity = "0";
-        }
-      }
-      
-    } 
-
-    scrollBtn.addEventListener('click', scrollToTop);
-  }
-}
+	init() {
+		const scrollBtn = document.getElementById('scroll-to-top');
+		const scrollFunction = () => {
+			if (document.documentElement.clientWidth > 991) {
+				if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+					scrollBtn.style.opacity = '1';
+				} else {
+					scrollBtn.style.opacity = '0';
+				}
+			} else {
+				// eslint-disable-next-line no-lonely-if
+				if (document.body.scrollTop > 2000 || document.documentElement.scrollTop > 2000) {
+					scrollBtn.style.opacity = '1';
+				} else {
+					scrollBtn.style.opacity = '0';
+				}
+			}
+		};
+		const scrollToTop = e => {
+			e.preventDefault();
+			window.scrollTo({
+				top: 0,
+				left: 0,
+				behavior: 'smooth'
+			});
+		};
+		window.onscroll = () => scrollFunction();
+		scrollBtn.addEventListener('click', scrollToTop);
+	}
+};
