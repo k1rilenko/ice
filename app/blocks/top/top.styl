@@ -92,6 +92,9 @@
 			padding 0 1.5rem
 		&_page
 			display none
+			+above($md)
+				display block
+				margin-bottom -7rem
 		&_pageblock
 			padding-bottom 3rem
 			.top__table
@@ -177,5 +180,23 @@
 			background-color $w
 			bottom 0
 			left 0
-
-
+	&_page 
+		+above($md)
+			.top__wrapper 
+				.top__block_text
+					margin-right auto
+				.top__block_background
+					right 0
+					text-align right
+		+above($md)
+			.top__wrapper 
+				.top__block_text
+					width 100%
+				.top__table 
+					max-width 500px
+					&-date:nth-child(2)
+						width 200px
+		+above($xl)
+			.top__wrapper 
+				.top__table
+					margin 0 auto			
