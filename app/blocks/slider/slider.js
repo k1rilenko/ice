@@ -133,6 +133,6 @@ app.slider = {
 			if (window.innerWidth > size) {
 				el.destroy(true, true);
 			}
-		});
+		}); 
 	}
 };

@@ -2,15 +2,40 @@
 	display block
 	padding-top 1.2rem
 	border 2px solid $grey
+	overflow hidden
 	&__list
 		position relative
 		counter-reset questions
+		+above($lg)
+			width 780px 
+			margin 0 auto
+		&_attachment
+			.questions__item_count
+				&:before
+					content 'Приложение №' counter(questions)
+					+above($lg)
+						display block
+						margin-bottom 4rem 
+						position relative
+			+above($lg)
+				.questions__title
+					padding 0 
 	&__item
 		padding 1.8rem 0 2.4rem
-		border-bottom 2px solid $grey
+		position relative
+		&:after
+			content ''
+			position absolute
+			bottom 0 
+			left -50vw 
+			width 200vw
+			height 2px 
+			background $grey
+
 		&_count
 			&:before
 				position absolute
+				top 23px
 				left 0
 				counter-increment questions
 				content counter(questions)
@@ -18,12 +43,14 @@
 				line-height 1.43
 				transition .3s
 				font-weight 700
+				
 		&_common
 			&:before
 				position absolute
 				content ''
 				width 13px
 				height 15px
+				top 23px
 				background-image url(../images/icon-list.svg)
 		&_open
 			.questions__title
@@ -50,17 +77,39 @@
 			flex 0 0 17px
 			margin-top .7rem
 			transform rotate(90deg)
+		+above($lg)
+			display flex
+			align-items center
+			width 100%
+			padding 0 0 0 5rem
 	&__text
 		font-size 2rem
 		line-height 1.75
-		padding 0 18rem
 		overflow hidden
 		transition .4s
 		padding-top 5.2rem
 		display none
 		+below($sm)
-			padding 0 4rem
+			padding 0
 			padding-top 3.6rem
 			font-size 1.8rem
 			line-height 1.67
+		ul
+			counter-reset answers
+			li
+				position relative
+				margin-bottom 2rem
+				&:before
+					position relative
+					display block
+					margin-bottom 2rem
+					top 0
+					left 0
+					counter-increment answers
+					content attr(data-number)'.' counter(answers)
+					font-size 1.4rem
+					line-height 1.43
+					transition .3s
+					font-weight 700
+
 

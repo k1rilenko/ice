@@ -93,11 +93,16 @@
 			top 0
 			width 13px
 			height 13px
+		+below($xl)
+			width 24rem 
+			height 24rem
 		+above($xl)
 			margin-left auto
 			margin-right auto
 	&__value
 		max-height 286px
+		+below($xl)
+			max-height 242px
 	&__name
 		position absolute
 		max-width 250px
@@ -119,8 +124,11 @@
 		margin-bottom 2.3rem
 	&__slider
 		padding-bottom 5rem
+		+above($lg)
+			max-width 1000px 
+			margin 0 auto
 		+above($xl)
-			max-width 1300px
+			max-width 1200px
 			margin 0 auto
 		+above($xxl)
 			max-width 1600px
@@ -183,6 +191,8 @@
 						opacity 1
 					.rating__button-wrapper
 						opacity 1	
+				&:not(.swiper-slide-prev):not(.swiper-slide-next):not(.swiper-slide-nth-prev-2):not(.swiper-slide-nth-next-2):not(.swiper-slide-active)
+					overflow hidden
 				&.swiper-slide-prev, &.swiper-slide-next
 					opacity .8
 					transform scale(.8)
@@ -219,5 +229,3 @@
 						transform translateX(-15rem) scale(.6)
 					+above($xxl)
 						transform translateX(-25rem) scale(.6)
-
-	
