@@ -1,6 +1,7 @@
 extends /blocks/layout-default/layout-default
 
 include /blocks/header/header
+include /blocks/sprite/sprite
 include /blocks/map/map
 include /blocks/footer/footer
 
@@ -8,7 +9,8 @@ block head
 	- var pageTitle = 'Map';
 
 block content
-
+		+sprite
+		+header(true, true, false)
 		+map
 
 

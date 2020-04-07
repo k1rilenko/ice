@@ -1,23 +1,23 @@
 /* eslint-disable no-unused-vars */
 app.slider = {
 	init() {
-		const ruleSlider = new Swiper('.swiper-rules', this.optionsRule);
-		const giftSlider = new Swiper('.gift__slider .swiper-container', this.optionsGifts);
+		if (document.querySelector('.swiper-rules')) {
+			const ruleSlider = new Swiper('.swiper-rules', this.optionsRule);
+			this.destroySlider(ruleSlider, 991);
+		}
+		if (document.querySelector('.gift__slider .swiper-container')) {
+			const giftSlider = new Swiper('.gift__slider .swiper-container', this.optionsGifts);
+			this.destroySlider(giftSlider, 768);
+		}
+		const ratingSlider = new Swiper('.rating__slider .swiper-container', this.optionsRating);
 
-		let heroSlider = null;
 		window.addEventListener('load', () => {
 			if (window.innerWidth >= 1280) {
-				// eslint-disable-next-line no-shadow
 				const heroSlider = new Swiper('.hero__slider .swiper-container', this.optionsHero);
 			}
 		});
-		this.runSlider('.rating__slider .swiper-container', this.optionsRating);
-		this.destroySlider(ruleSlider, 991);
-		this.destroySlider(giftSlider, 768);
+
 		app.common.initStyle('swiper.min');
-	},
-	runSlider(selector, options) {
-		const slider = new Swiper(selector, options);
 	},
 	options: {
 		pagination: {
@@ -123,6 +123,10 @@ app.slider = {
 		}
 	},
 	destroySlider(el, size) {
+		console.log(el);
+		if (!el) {
+			return;
+		}
 		window.addEventListener('resize', () => {
 			if (window.innerWidth > size) {
 				el.destroy(true, true);
@@ -132,6 +136,6 @@ app.slider = {
 			if (window.innerWidth > size) {
 				el.destroy(true, true);
 			}
-		}); 
+		});
 	}
 };

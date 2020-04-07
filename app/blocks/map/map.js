@@ -107,7 +107,7 @@ app.map = {
 			icon: options.markerImage
 		});
 		map.setOptions({styles: options.styles});
-	},
+	}
 	// showEvents() {
 	// 	if (this.mapButtonEvents) {
 	// 		this.mapButtonEvents.addEventListener('click', () => {
@@ -126,7 +126,7 @@ app.map = {
 	// 	this.showEvents();
 	// 	this.closeEvents();
 	// },
-	// scrollEventList() {
+	// \EventList() {
 	// 	if (app.map.mapClose) {
 	// 		const pageHeight = document.documentElement.clientHeight;
 	// 		const eventListHead = app.map.mapClose.clientHeight;

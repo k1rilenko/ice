@@ -27,6 +27,8 @@ app.scroll = {
 			});
 		};
 		window.onscroll = () => scrollFunction();
-		scrollBtn.addEventListener('click', scrollToTop);
+		if (scrollBtn) {
+			scrollBtn.addEventListener('click', scrollToTop);
+		}
 	}
 };
