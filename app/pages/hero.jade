@@ -8,6 +8,7 @@ include /blocks/stat/stat
 include /blocks/extra/extra
 include /blocks/summ/summ
 include /blocks/hero-list/hero-list
+include /blocks/scroll/scroll
 
 block head
 	- var pageTitle = 'hero';
@@ -20,5 +21,6 @@ block content
 	+stat(getData(hero))
 	+extra(getData(hero))
 	+summ(getData(hero))
-	+hero-list(getData(hero))
+	+hero-list(getData(hero)).hero-page
 	+footer
+	+scroll

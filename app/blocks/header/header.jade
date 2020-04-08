@@ -16,6 +16,10 @@ mixin header(isLoggined, logo, links)
 							+e('a').link-href(href="#") Правила
 						+e('li').link-item
 							+e('a').link-href(href="#") Призы
+						+e('li').link-item
+							+e('a').link-href(href="#") Герои
+						+e('li').link-item
+							+e('a').link-href(href="#") Вопросы и ответы
 				if !isLoggined
 					+e.login
 						+e('button').login-button.button Вход

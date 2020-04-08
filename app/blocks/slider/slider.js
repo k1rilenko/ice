@@ -38,7 +38,7 @@ app.slider = {
 		init: false,
 		updateOnWindowResize: true,
 		pagination: {
-			el: '.swiper-rules .swiper-pagination',
+			el: '.rules__slider .swiper-pagination',
 			clickable: true
 		},
 		slidesPerView: 1.15,
@@ -85,6 +85,7 @@ app.slider = {
 				slidesPerGroup: 1,
 				centeredSlides: true,
 				loop: true,
+				speed: 500,
 				navigation: {
 					nextEl: '.rating__slider .swiper-button-next',
 					prevEl: '.rating__slider .swiper-button-prev'
