@@ -1,15 +1,14 @@
 [
 	{
-	"link": "#",
-	"background": "rifleniu",
-	"image": "rifleniu.png",
-
-	"name": "rifleniu-title.png",
-	"nameLarge": "rifleniu-title-lg.png",
-	"alt": "МС Рифленый",
-	"percent": "21",
-	"point": "44",
-	"imagewidthBackground": "rifleniu.png"
+		"link": "#",
+		"background": "rifleniu",
+		"image": "rifleniu.png",
+		"name": "rifleniu-title.png",
+		"nameLarge": "rifleniu-title-lg.png",
+		"alt": "МС Рифленый",
+		"percent": "21",
+		"point": "44",
+		"imagewidthBackground": "rifleniu.png"
 	},
 	{
 		"link": "#",
@@ -23,7 +22,7 @@
 		"point": "1",
 		"imagewidthBackground": "hrust.png"
 	},
-	{  
+	{
 		"link": "#",
 		"background": "capitan",
 		"image": "capitan.png",
@@ -42,7 +41,7 @@
 		"imageLarge": "eskimon2-lg.png",
 		"name": "eskimon-title.png",
 		"nameLarge": "eskimon-title-lg.png",
-		"alt": "Эскимон",  
+		"alt": "Эскимон",
 		"percent": "15",
 		"point": "1",
 		"imagewidthBackground": "eskimon.png"

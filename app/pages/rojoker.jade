@@ -1,0 +1,26 @@
+extends /blocks/layout-default/layout-default
+
+include /blocks/header/header
+include /blocks/sprite/sprite
+include /blocks/footer/footer
+include /blocks/photo/photo
+include /blocks/stat/stat
+include /blocks/extra/extra
+include /blocks/summ/summ
+include /blocks/hero-list/hero-list
+include /blocks/scroll/scroll
+
+block head
+	- var pageTitle = 'rojoker';
+
+block content
+	-var hero = 'rojoker'
+	+sprite
+	+header(true, false, true)
+	+photo(getData(hero))
+	+stat(getData(hero))
+	+extra(getData(hero))
+	+summ(getData(hero))
+	+hero-list(getData(hero)).hero-page
+	+footer
+	+scroll

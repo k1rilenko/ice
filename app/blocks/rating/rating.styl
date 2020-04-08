@@ -1,5 +1,5 @@
 .rating
-	display block 
+	display block
 	margin-bottom 4rem
 	position relative
 	&__head
@@ -94,7 +94,7 @@
 			width 13px
 			height 13px
 		+below($xl)
-			width 24rem 
+			width 24rem
 			height 24rem
 		+above($xl)
 			margin-left auto
@@ -125,7 +125,7 @@
 	&__slider
 		padding-bottom 5rem
 		+above($lg)
-			max-width 1000px 
+			max-width 1000px
 			margin 0 auto
 		+above($xl)
 			max-width 1200px
@@ -137,6 +137,7 @@
 			position relative
 			bottom 0
 			padding-top 3.9rem
+			margin-top 3.9rem
 			z-index 4
 		.swiper
 			&-pagination-bullet
@@ -146,7 +147,7 @@
 				border-radius 50%
 				opacity 1
 				margin .375rem
-				border 2.5px solid transparent 
+				border 2.5px solid transparent
 				transition .3s
 				&.swiper-pagination-bullet-active
 					background linear-gradient(195.7deg, #FFD84F -.15%, #FF8A00 100%)
@@ -167,7 +168,7 @@
 						display none
 					&.swiper-button-next
 						transform rotate(180deg)
-			&-slide 
+			&-slide
 				transition .5s
 				.rating__image-wrap_capitan
 					.rating__name
@@ -175,8 +176,8 @@
 				.rating__name
 					opacity 0
 					transition opacity .3s
-				.rating__image-wrap:before, .rating__image-wrap:after 
-					opacity 0 
+				.rating__image-wrap:before, .rating__image-wrap:after
+					opacity 0
 					transition opacity .3s
 				.rating__num-value
 					opacity 0
@@ -190,14 +191,14 @@
 				&.swiper-slide-active
 					z-index 3
 					transform translateY(2rem)
-					.rating__image-wrap:before, .rating__image-wrap:after 
-						opacity 1 
+					.rating__image-wrap:before, .rating__image-wrap:after
+						opacity 1
 					.rating__name
 						opacity 1
 					.rating__num-value
 						opacity 1
 					.rating__button-wrapper
-						opacity 1	
+						opacity 1
 				&:not(.swiper-slide-prev):not(.swiper-slide-next):not(.swiper-slide-nth-prev-2):not(.swiper-slide-nth-next-2):not(.swiper-slide-active)
 					// overflow hidden
 					transform scale(0)
@@ -216,7 +217,7 @@
 					+above($xl)
 						transform translate(5rem) scale(.8)
 					+above($xxl)
-						transform translate(10rem) scale(.8)	
+						transform translate(10rem) scale(.8)
 				&.swiper-slide-next
 					+above($lg)
 						transform translate(-6rem) scale(.8)
@@ -226,10 +227,10 @@
 						transform translate(-10rem) scale(.8)
 				&.swiper-slide-nth-prev-2
 					+above($lg)
-						transform translate(15rem) scale(.6) 
+						transform translate(15rem) scale(.6)
 					+above($xl)
 						transform translate(15rem) scale(.6)
-					+above($xxl) 
+					+above($xxl)
 						transform translate(25rem, -2rem) scale(.6)
 				&.swiper-slide-nth-next-2
 					+above($lg)
