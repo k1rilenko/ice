@@ -168,7 +168,10 @@
 					&.swiper-button-next
 						transform rotate(180deg)
 			&-slide 
-				transition .3s 
+				transition .5s
+				.rating__image-wrap_capitan
+					.rating__name
+						bottom -2rem
 				.rating__name
 					opacity 0
 					transition opacity .3s
@@ -181,8 +184,12 @@
 				.rating__button-wrapper
 					opacity 0
 					transition opacity .3s
+					display flex
+					justify-content center
+					align-items center
 				&.swiper-slide-active
 					z-index 3
+					transform translateY(2rem)
 					.rating__image-wrap:before, .rating__image-wrap:after 
 						opacity 1 
 					.rating__name
@@ -192,7 +199,9 @@
 					.rating__button-wrapper
 						opacity 1	
 				&:not(.swiper-slide-prev):not(.swiper-slide-next):not(.swiper-slide-nth-prev-2):not(.swiper-slide-nth-next-2):not(.swiper-slide-active)
-					overflow hidden
+					// overflow hidden
+					transform scale(0)
+					opacity 0
 				&.swiper-slide-prev, &.swiper-slide-next
 					opacity .8
 					transform scale(.8)
@@ -203,29 +212,29 @@
 					z-index 1
 				&.swiper-slide-prev
 					+above($lg)
-						transform translateX(6rem) scale(.8)
+						transform translate(6rem) scale(.8)
 					+above($xl)
-						transform translateX(5rem) scale(.8)
+						transform translate(5rem) scale(.8)
 					+above($xxl)
-						transform translateX(10rem) scale(.8)	
+						transform translate(10rem) scale(.8)	
 				&.swiper-slide-next
 					+above($lg)
-						transform translateX(-6rem) scale(.8)
+						transform translate(-6rem) scale(.8)
 					+above($xl)
-						transform translateX(-5rem) scale(.8)
+						transform translate(-5rem) scale(.8)
 					+above($xxl)
-						transform translateX(-10rem) scale(.8)
+						transform translate(-10rem) scale(.8)
 				&.swiper-slide-nth-prev-2
 					+above($lg)
-						transform translateX(15rem) scale(.6) 
+						transform translate(15rem) scale(.6) 
 					+above($xl)
-						transform translateX(15rem) scale(.6)
+						transform translate(15rem) scale(.6)
 					+above($xxl) 
-						transform translateX(25rem) scale(.6)
+						transform translate(25rem, -2rem) scale(.6)
 				&.swiper-slide-nth-next-2
 					+above($lg)
-						transform translateX(-15rem) scale(.6)
+						transform translate(-15rem) scale(.6)
 					+above($xl)
-						transform translateX(-15rem) scale(.6)
+						transform translate(-15rem) scale(.6)
 					+above($xxl)
-						transform translateX(-25rem) scale(.6)
+						transform translate(-25rem, -2rem) scale(.6)

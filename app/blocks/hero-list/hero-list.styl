@@ -19,4 +19,21 @@
 		bottom 0
 		left 50%
 		transform translateX(-50%)
-
+	&.hero-page
+		.hero-list__wrapper
+			padding 13rem 5% 14rem
+			justify-content space-around
+		+below($xxl)
+			.hero-list__wrap
+				width 8rem
+				height 8rem
+		+below($xxl)
+			.hero-list__wrap
+				width 6rem
+				height 6rem
+				margin 0
+			.hero-list__image
+				max-width 10rem
+				max-height 10rem
+			.hero-list__wrapper
+				padding 8rem 5% 

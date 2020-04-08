@@ -2,10 +2,6 @@
 /* eslint-disable quote-props */
 app.map = {
 	mapContainer: document.querySelector('#map-block'),
-	// mapButtonEvents: document.querySelector('.map__button_events'),
-	// mapEventsList: document.querySelector('.feed_map'),
-	// mapClose: document.querySelector('.feed__text-block'),
-	// mapScrollContainer: document.querySelector('.feed_map .feed__list'),
 	mapLoading() {
 		if (this.mapContainer) {
 			this.initMap();
@@ -14,137 +10,218 @@ app.map = {
 	initMap() {
 		const options = {
 			coordinates: {
-				lat: 46.701747,
-				lng: 2.395849
+				lat: 59.911033,
+				lng: 30.301238
 			},
-			markerImage: './assets/images/marker.svg',
+			markerImage: '',
 			styles: [
 				{
-					'featureType': 'administrative.country',
-					'elementType': 'labels',
-					'stylers': [
+					"elementType": "geometry",
+					"stylers": [
 						{
-							'weight': 1
+							"color": "#f5f5f5"
 						}
 					]
 				},
 				{
-					'featureType': 'administrative.country',
-					'elementType': 'labels.text',
-					'stylers': [
+					"elementType": "labels.icon",
+					"stylers": [
 						{
-							'color': '#737373'
+							"visibility": "off"
 						}
 					]
 				},
 				{
-					'featureType': 'administrative.locality',
-					'elementType': 'labels',
-					'stylers': [
+					"elementType": "labels.text.fill",
+					"stylers": [
 						{
-							'color': '#999999'
-						},
-						{
-							'weight': 0.5
+							"color": "#616161"
 						}
 					]
 				},
 				{
-					'featureType': 'administrative.province',
-					'elementType': 'labels',
-					'stylers': [
+					"elementType": "labels.text.stroke",
+					"stylers": [
 						{
-							'color': '#999999'
-						},
-						{
-							'weight': 0.5
+							"color": "#f5f5f5"
 						}
 					]
 				},
 				{
-					'featureType': 'landscape',
-					'stylers': [
+					"featureType": "administrative.land_parcel",
+					"elementType": "labels.text.fill",
+					"stylers": [
 						{
-							'color': '#333333'
+							"color": "#bdbdbd"
 						}
 					]
 				},
 				{
-					'featureType': 'poi.park',
-					'stylers': [
+					"featureType": "poi",
+					"elementType": "geometry",
+					"stylers": [
 						{
-							'color': '#333333'
+							"color": "#eeeeee"
 						}
 					]
 				},
 				{
-					'featureType': 'road',
-					'stylers': [
+					"featureType": "poi",
+					"elementType": "labels.text.fill",
+					"stylers": [
 						{
-							'color': '#484848'
+							"color": "#757575"
 						}
 					]
 				},
 				{
-					'featureType': 'water',
-					'stylers': [
+					"featureType": "poi.park",
+					"elementType": "geometry",
+					"stylers": [
 						{
-							'color': '#1d1d1d'
+							"color": "#e5e5e5"
+						}
+					]
+				},
+				{
+					"featureType": "poi.park",
+					"elementType": "labels.text.fill",
+					"stylers": [
+						{
+							"color": "#9e9e9e"
+						}
+					]
+				},
+				{
+					"featureType": "road",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"color": "#ffffff"
+						}
+					]
+				},
+				{
+					"featureType": "road.arterial",
+					"elementType": "labels.text.fill",
+					"stylers": [
+						{
+							"color": "#757575"
+						}
+					]
+				},
+				{
+					"featureType": "road.highway",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"color": "#dadada"
+						}
+					]
+				},
+				{
+					"featureType": "road.highway",
+					"elementType": "labels.text.fill",
+					"stylers": [
+						{
+							"color": "#616161"
+						}
+					]
+				},
+				{
+					"featureType": "road.local",
+					"elementType": "labels.text.fill",
+					"stylers": [
+						{
+							"color": "#9e9e9e"
+						}
+					]
+				},
+				{
+					"featureType": "transit.line",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"color": "#e5e5e5"
+						}
+					]
+				},
+				{
+					"featureType": "transit.station",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"color": "#eeeeee"
+						}
+					]
+				},
+				{
+					"featureType": "water",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"color": "#c9c9c9"
+						}
+					]
+				},
+				{
+					"featureType": "water",
+					"elementType": "labels.text.fill",
+					"stylers": [
+						{
+							"color": "#9e9e9e"
 						}
 					]
 				}
 			]
 		};
+
+
+
 		const map = new google.maps.Map(this.mapContainer, {
 			center: options.coordinates,
-			zoom: 5,
+			zoom: 12,
 			disableDefaultUI: false
 		});
-		const marker = new google.maps.Marker({
-			position: options.coordinates,
-			map,
-			animation: google.maps.Animation.DROP,
-			icon: options.markerImage
+
+		const myoverlay = new google.maps.OverlayView();
+		myoverlay.draw = function () {
+				this.getPanes().markerLayer.id='all-markers';
+		};
+		myoverlay.setMap(map);
+
+		const locations = [
+			['StP', 59.923926, 30.301034, '2', 'StP'],
+			['StP', 59.905506, 30.338391, '4', 'StP'],
+			['StP', 59.924745, 30.344924, '3', 'StP'],
+			['StP', 59.918708, 30.288989, '5', 'StP'],
+			['StP', 59.885540, 30.275720, '1', 'StP']
+		]; 
+		let allMarkers = []
+
+		var marker;
+
+		for (var i = 0; i < locations.length; i++) {  
+			 marker = new google.maps.Marker({
+				position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+				map: map,
+				icon: 'assets/images/marker.png',
+				optimized: false,
+				title: locations[i][3],
+				eventTarget: locations[i][0], 
+				eventCountry: locations[i][4],  
+				animation: google.maps.Animation.DROP,
+			});
+
+			allMarkers.push(marker)
+		}
+
+		allMarkers.forEach(function(item) {
+			console.log(item.title)
 		});
+
 		map.setOptions({styles: options.styles});
 	}
-	// showEvents() {
-	// 	if (this.mapButtonEvents) {
-	// 		this.mapButtonEvents.addEventListener('click', () => {
-	// 			this.mapEventsList.style = 'transform: translateX(0);';
-	// 		});
-	// 	}
-	// },
-	// closeEvents() {
-	// 	if (this.mapClose) {
-	// 		this.mapClose.addEventListener('click', () => {
-	// 			this.mapEventsList.style = '';
-	// 		});
-	// 	}
-	// },
-	// eventListControl() {
-	// 	this.showEvents();
-	// 	this.closeEvents();
-	// },
-	// \EventList() {
-	// 	if (app.map.mapClose) {
-	// 		const pageHeight = document.documentElement.clientHeight;
-	// 		const eventListHead = app.map.mapClose.clientHeight;
-	// 		const navHeight = 46;
-	// 		const listHeight = pageHeight - eventListHead - navHeight;
-	// 		app.map.mapScrollContainer.style = `height: ${listHeight}px;`;
-	// 	}
-	// },
-	// scrollEventListResize() {
-	// 	window.addEventListener('resize', () => {
-	// 		this.scrollEventList();
-	// 		this.reloadBaseVh();
-	// 	}
-	// 	);
-	// },
-	// reloadBaseVh() {
-	// 	const vh = window.innerHeight * 0.01;
-	// 	document.documentElement.style.setProperty('--vh', `${vh}px`);
-	// }
+	
 
 };

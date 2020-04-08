@@ -1,4 +1,5 @@
 app.common.init();
+app.header.init();
 app.scroll.init();
 app.fancyboxExample.init();
 app.slider.init();
