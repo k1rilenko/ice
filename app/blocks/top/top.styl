@@ -49,7 +49,10 @@
 				width 100%
 				height calc(100% - 29rem - 27.6rem)
 				background $w		
+		+above($lg)
+			background #008EF4
 		+above($xl)
+			background linear-gradient(183.69deg, #008EF4 -.15%, #63D4FF 100%)
 			.top__block		
 				&_background 
 					right 15rem
@@ -150,6 +153,7 @@
 			&:nth-child(2)
 				width 110px
 				border-right 2px solid $grey
+				word-break break-all
 				+above($xl)
 					width 24rem
 			&:last-child

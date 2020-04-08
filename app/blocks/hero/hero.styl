@@ -230,8 +230,16 @@
 		max-width 140px
 		z-index 2
 		bottom 0
+		+below($sm)
+			bottom -1.5rem
 		+above($xl)
 			max-width 70%
 			top 0 
 			left 50%
 			transform translateX(-50%) 
+	&__image-wrap_capitan
+		.hero__name
+			+below($sm)
+				bottom -3.5rem	
+			+above($lg)
+				top -3rem
