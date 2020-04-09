@@ -1,6 +1,6 @@
 mixin header(isLoggined, logo, links)
 	+b('header').header&attributes(attributes)
-		+e.container.container._header
+		+e.container.container._header(class= isLoggined ? "active" : "")
 			+e.wrapper
 				if logo
 					+e.logo
