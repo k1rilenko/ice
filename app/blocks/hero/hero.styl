@@ -69,23 +69,36 @@
 			max-width 900px
 			margin 0 auto
 		+above($xl)
-			max-width 1200px
+			max-width 1300px
 		+above($xxl)
 			max-width 1600px
 		.swiper
 			&-button
 				display none
 				+above($xl)
-					display block
+					display flex 
+					justify-content center
+					align-items center
 					width 6rem
 					height 6rem
 					border-radius 50%
-					background url(../images/arrow.svg) center no-repeat
-					background-size cover
+					background $w
+					border 2px solid $grey
+					transition .3s
+					box-shadow 0 5px 15px transparent
 					&:after
 						display none
+					&.swiper-button-prev
+						transform scale(-1, 1)
 					&.swiper-button-next
-						transform rotate(180deg)
+						.icon 
+							margin-left 4px
+					&:hover
+						background linear-gradient(283.38deg, #008EF4 0, #63D4FF 100%, #63D4FF 100%)
+						box-shadow 0 5px 15px rgba(44, 173, 250, .37)
+						border-color $w
+						.icon 
+							stroke $w
 			&-wrapper
 				+below($xl)
 					box-sizing border-box
@@ -93,10 +106,7 @@
 			&-slide
 				display block
 				width 20%
-				transition .3s
-				&:not(.swiper-slide-prev):not(.swiper-slide-next):not(.swiper-slide-nth-prev-2):not(.swiper-slide-nth-next-2):not(.swiper-slide-active)
-					transform scale(0)
-					opacity 0
+				transition .5s
 				+below($xl)
 					width 50%
 					margin-bottom 5.5rem
@@ -114,23 +124,26 @@
 							left 50%
 							transform translateX(-50%)
 				+above($xl)
+					&:not(.swiper-slide-prev):not(.swiper-slide-next):not(.swiper-slide-nth-prev-2):not(.swiper-slide-nth-next-2):not(.swiper-slide-active)
+						transform scale(0)
+						opacity 0
 					.hero__wrapper
 						height 32rem
 					&.swiper-slide-active
 						z-index 3
 						box-shadow 0 40px 10px 10px rgba(0, 0, 0, .3)
 					&.swiper-slide-prev
-						margin-right -5rem
-						margin-left 5rem
+						margin-right -2rem
+						margin-left 2rem
 					&.swiper-slide-next
-						margin-left -5rem
-						margin-right 5rem
+						margin-left -2rem
+						margin-right 2rem
 					&.swiper-slide-nth-prev-2
-						margin-right -10rem
-						margin-left 10rem
+						margin-right -20rem
+						margin-left 20rem
 					&.swiper-slide-nth-next-2
-						margin-left -10rem
-						margin-right 10rem
+						margin-left -20rem
+						margin-right 20rem
 					&.swiper-slide-prev, &.swiper-slide-next
 						transform translateY(3rem)
 						box-shadow 0 60px 10px 10px rgba(0, 0, 0, .3)
@@ -150,6 +163,18 @@
 					.hero__wrapper
 						height 38rem
 						width 100%
+					&.swiper-slide-prev
+						margin-right -5rem
+						margin-left 5rem
+					&.swiper-slide-next
+						margin-left -5rem
+						margin-right 5rem
+					&.swiper-slide-nth-prev-2
+						margin-right -15rem
+						margin-left 15rem
+					&.swiper-slide-nth-next-2
+						margin-left -15rem
+						margin-right 15rem 
 	&__container
 		padding 0 1.5rem
 	&__item
@@ -185,7 +210,7 @@
 				.hero__image-wrap
 					background $rojoker
 		+above($xl)
-			padding 40px 20px
+			padding 40px 5px
 			border-radius 20px
 			&_capitan
 				background $capitan
@@ -238,8 +263,8 @@
 		+below($sm)
 			bottom -1.5rem
 		+above($xl)
-			max-width 70%
-			top 0
+			max-width 90%
+			top -2rem
 			left 50%
 			transform translateX(-50%)
 	&__image-wrap_capitan

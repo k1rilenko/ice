@@ -156,18 +156,29 @@
 			&-button
 				display none
 				+above($md)
-					display block
+					display flex 
+					justify-content center
+					align-items center
 					width 6rem
 					height 6rem
 					border-radius 50%
-					background url(../images/arrow.svg) center no-repeat
-					background-size cover
-					border  2px solid $grey
-					z-index 3
+					background $w
+					border 2px solid $grey
+					transition .3s
+					box-shadow 0 5px 15px transparent
 					&:after
 						display none
+					&.swiper-button-prev
+						transform scale(-1, 1)
 					&.swiper-button-next
-						transform rotate(180deg)
+						.icon 
+							margin-left 4px
+					&:hover
+						background linear-gradient(283.38deg, #008EF4 0, #63D4FF 100%, #63D4FF 100%)
+						box-shadow 0 5px 15px rgba(44, 173, 250, .37)
+						border-color $w
+						.icon 
+							stroke $w
 			&-slide
 				transition .5s
 				.rating__image-wrap_capitan
