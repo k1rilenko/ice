@@ -66,9 +66,11 @@
 				height 15px
 	&__slider
 		+above($lg)
-			max-width 1300px
+			max-width 900px
 			margin 0 auto
 		+above($xl)
+			max-width 1200px
+		+above($xxl)
 			max-width 1600px
 		.swiper
 			&-button
@@ -92,6 +94,9 @@
 				display block
 				width 20%
 				transition .3s
+				&:not(.swiper-slide-prev):not(.swiper-slide-next):not(.swiper-slide-nth-prev-2):not(.swiper-slide-nth-next-2):not(.swiper-slide-active)
+					transform scale(0)
+					opacity 0
 				+below($xl)
 					width 50%
 					margin-bottom 5.5rem

@@ -39,20 +39,22 @@ app.scroll = {
 
 		if (document.documentElement.clientWidth >= 1280 && firstSection) {
 			
+			var isEvent = false
+
 			$(firstSection).on('mousewheel DOMMouseScroll', function(event) {
-				event.preventDefault();
 
-
-				var wheelDelta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
-		
-					if (wheelDelta < 0) {
-						$('html,body').animate({
-							scrollTop: secondSection.offsetTop - 100
-						});
-					} else {
-						$('html,body').animate({
-							scrollTop: firstSection.offsetTop 
-						});
+				if (!isEvent) {
+					event.preventDefault();
+						var wheelDelta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
+				
+							if (wheelDelta < 0) {
+								$('html,body').animate({
+									scrollTop: secondSection.offsetTop - 100,
+								},
+								500, 
+								'swing');
+							} 
+							isEvent = true;
 					}
 				});
 		}

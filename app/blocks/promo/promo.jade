@@ -11,5 +11,6 @@ mixin promo()
 								use(xlink:href='#back')
 		+e.background
 			+e('picture')
+				source(srcset="./assets/images/promo-bg/promo-xxl.jpg" media="(min-width: 1630px)") 
 				source(srcset="./assets/images/promo-bg/promo-lg.jpg" media="(min-width: 1200px)") 
 				+e('img').background-img_mobile(src="./assets/images/foreground.png", alt="")
