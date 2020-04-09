@@ -1,14 +1,12 @@
 /* eslint-disable no-unused-vars */
 app.scroll = {
 	init() {
-		const scrollBtn = document.getElementById('scroll-to-top'),
-					firstSection = document.querySelector('.promo'),
-					secondSection = document.querySelector('.rules');
+		const scrollBtn = document.getElementById('scroll-to-top');
+		const firstSection = document.querySelector('.promo');
+		const secondSection = document.querySelector('.rules');
 
 		const scrollFunction = () => {
-
 			if (document.documentElement.clientWidth > 991) {
-				
 				if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
 					scrollBtn.style.opacity = '1';
 				} else {
@@ -38,27 +36,21 @@ app.scroll = {
 
 
 		if (document.documentElement.clientWidth >= 1280 && firstSection) {
-			
-			var isEvent = false
-
-			$(firstSection).on('mousewheel DOMMouseScroll', function(event) {
-
+			let isEvent = false;
+			$(firstSection).on('mousewheel DOMMouseScroll', event => {
 				if (!isEvent) {
 					event.preventDefault();
-						var wheelDelta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
-				
-							if (wheelDelta < 0) {
-								$('html,body').animate({
-									scrollTop: secondSection.offsetTop - 100,
-								},
-								500, 
-								'swing');
-							} 
-							isEvent = true;
+					const wheelDelta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
+					if (wheelDelta < 0) {
+						$('html,body').animate({
+							scrollTop: secondSection.offsetTop - 100
+						},
+						500,
+						'swing');
 					}
-				});
+					isEvent = true;
+				}
+			});
 		}
-
-
 	}
 };
