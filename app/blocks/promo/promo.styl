@@ -68,7 +68,18 @@
 			font-family $r
 			font-size 2rem
 			color $dgrey
-			padding-left 118px
+			padding-left 55px
+			+above($lg)
+				padding-left 55px
+			+above($xl)
+				padding-left 118px
+			+above($xxl)
+				padding-left 118px
+		& + .promo__button 
+			display none
+		&:focus 
+			& + .promo__button 
+				display block
 		&-wrapper
 			+above($xl)
 				width 100%
