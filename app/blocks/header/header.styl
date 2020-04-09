@@ -8,9 +8,12 @@
 		display flex
 		justify-content space-between
 		align-items center
-		padding 15px 0
 		+below($sm)
 			padding 5px 0
+		+above($xl)
+			padding 8px 0
+		+above($xxl)
+			padding 10px 0
 	&__back
 		position relative
 		width 50px
@@ -27,6 +30,10 @@
 	&__logo-image
 		+below($sm)
 			max-width 10rem
+		+above($xl)
+			max-width 12.6rem
+		+above($xxl)
+			max-width 16.8rem
 	&__login-button
 		font-family $bor
 		width 100px

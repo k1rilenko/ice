@@ -8,15 +8,17 @@
 	background-position center bottom
 	position relative
 	overflow hidden
-	+above($xl)
-		background-image url(../images/promo-bg/1.jpg)
-		background-size 100%
-		background-position 0 100%
-		min-height 100vh
 	+below($xl)
 		min-height 69rem
 	+above($lg)
 		padding-top 0
+	+above($xl)
+		background-image url(../images/promo-bg/1.jpg)
+		background-size 100%
+		background-position 0 100%
+		min-height 69rem
+	+above($xxl)
+		min-height 100rem
 	&__title
 		padding-top 4.3rem
 		margin-bottom 3.5rem
@@ -26,9 +28,10 @@
 			font-size 4.5rem
 			line-height 1
 			text-align left
-			padding-top 39%
-		+above($xl)
 			padding-top 0
+			margin-bottom 5rem
+		+above($xxl)
+			margin-bottom 5rem
 	&__input-block
 		// padding-bottom 40rem
 	&__input-wrapper
@@ -64,10 +67,8 @@
 		&::placeholder
 			font-family $r
 			font-size 2rem
-			line-height 1.5
 			color $dgrey
-			text-align center
-			padding-left 45px
+			padding-left 118px
 		&-wrapper
 			+above($xl)
 				width 100%
@@ -106,6 +107,9 @@
 			width 380px
 			margin-left auto
 			position absolute
-			top 50% 
-			right 5%
+			top 48% 
+			right 3.5%
 			transform translateY(-50%)		
+		+above($xxl)
+			top 50%
+			right 13%
