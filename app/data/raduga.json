@@ -1,8 +1,8 @@
 {
 	"title": "Агент Радуга",
 	"gradient": "raduga",
-	"prev": "#",
-	"next": "#",
+	"prev": "plombirovna.html",
+	"next": "rifleniu.html",
 	"name": "raduga-title.png",
 	"nameLarge": "raduga-title-lg.png",
 	"image": "raduga.png",

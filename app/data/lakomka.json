@@ -1,8 +1,8 @@
 {
 	"title": "Лакомка Московская",
 	"gradient": "lakomka",
-	"prev": "#",
-	"next": "#",
+	"prev": "kaktus.html",
+	"next": "plombirovna.html",
 	"name": "lakomka-title.png",
 	"nameLarge": "lakomka-title-lg.png",
 	"image": "lakomka.png",

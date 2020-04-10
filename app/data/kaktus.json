@@ -1,8 +1,8 @@
 {
 	"title": "Кактус Джо",
 	"gradient": "kaktus",
-	"prev": "#",
-	"next": "#",
+	"prev": "hrust.html",
+	"next": "lakomka.html",
 	"name": "kaktus-title.png",
 	"nameLarge": "kaktus-title-lg.png",
 	"image": "kaktus.png",

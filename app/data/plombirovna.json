@@ -1,8 +1,8 @@
 {
 	"title": "Пломбировна",
 	"gradient": "plombirovna",
-	"prev": "#",
-	"next": "#",
+	"prev": "lakomka.html",
+	"next": "raduga.html",
 	"name": "plombirovna-title.png",
 	"nameLarge": "plombirovna-title-lg.png",
 	"image": "plombirovna.png",

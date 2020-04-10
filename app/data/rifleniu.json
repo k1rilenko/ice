@@ -1,8 +1,8 @@
 {
 	"title": "МС Рифленый",
 	"gradient": "rifleniu",
-	"prev": "#",
-	"next": "#",
+	"prev": "raduga.html",
+	"next": "rojoker.html",
 	"name": "rifleniu-title.png",
 	"nameLarge": "rifleniu-title-lg.png",
 	"image": "rifleniu.png",

@@ -1,8 +1,8 @@
 {
 	"title": "Рожокер",
 	"gradient": "rojoker",
-	"prev": "#",
-	"next": "#",
+	"prev": "rifleniu.html",
+	"next": "capitan.html",
 	"name": "rojoker-title.png",
 	"nameLarge": "rojoker-title-lg.png",
 	"image": "rojoker.png",

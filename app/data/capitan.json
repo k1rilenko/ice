@@ -1,8 +1,8 @@
 {
 	"title": "Капитан Россия",
 	"gradient": "capitan",
-	"prev": "eskimon.html",
-	"next": "hrust.html",
+	"prev": "rojoker.html",
+	"next": "eskimon.html",
 	"name": "capitan-title.png",
 	"nameLarge": "capitan-title-lg.png",
 	"image": "capitan.png",
