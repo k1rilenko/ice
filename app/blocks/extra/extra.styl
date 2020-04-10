@@ -4,7 +4,7 @@
 		display flex
 		flex-direction column
 		+above($md)
-			flex-direction row
+			flex-direction row-reverse
 	&__block
 		position relative
 		display flex
@@ -14,7 +14,7 @@
 		+above($md)
 			flex-basis 50%
 			&:last-child
-				border-left 2px dashed $grey
+				border-right 2px dashed $grey
 				border-bottom 2px dashed $grey
 		&_weapon
 			border-bottom 2px dashed $grey
@@ -22,8 +22,16 @@
 		max-width 25rem
 		margin 0 auto
 		margin-bottom 2.5rem
+		position relative
+		+above($xl)
+			max-width 35rem 
 	&__image
 		width 100%
+		+above($md)
+			width auto 
+			max-height 20rem
+		+above($xl)
+			max-height 35rem
 	&__lable
 		font-size 1.8rem
 		line-height 1.39

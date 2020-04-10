@@ -7,9 +7,9 @@ mixin extra(hero)
 				+e('span').lable Боевое оружие
 				+e('span').title.sub= hero.weapon
 				.circle-block
-					+b('i').cirle._s(class="gradient_#{hero.gradient}")
-					+b('i').cirle._m(class="gradient_#{hero.gradient}")
-					+b('i').cirle._xl._blur(class="gradient_#{hero.gradient}")
+					+b('i').sphere._s(class="gradient_#{hero.gradient}")
+					+b('i').sphere._m(class="gradient_#{hero.gradient}")
+					+b('i').sphere._xl._blur(class="gradient_#{hero.gradient}")
 			+e.block._enemy
 				+e.image-block
 					+e.image(src="./assets/images/heroes/#{hero.enemyImage}")
@@ -17,6 +17,6 @@ mixin extra(hero)
 				+e('span').title.sub= hero.enemy
 				-var enemyClass = hero.enemyImage.split('-');
 				.circle-block
-					+b('i').cirle._sm(class="gradient_#{enemyClass[0]}")
-					+b('i').cirle._l(class="gradient_#{enemyClass[0]}")
-					+b('i').cirle._xxl._blur(class="gradient_#{enemyClass[0]}")
+					+b('i').sphere._sm(class="gradient_#{enemyClass[0]}")
+					+b('i').sphere._lg(class="gradient_#{enemyClass[0]}")
+					+b('i').sphere._xxl._blur(class="gradient_#{enemyClass[0]}")
