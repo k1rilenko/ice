@@ -48,22 +48,25 @@
 		top 50%
 		transform translateY(-50%) rotate(180deg)
 		background $grey
+		box-shadow 0 5px 10px transparent
+		transition .3s
 		&:hover
 			background linear-gradient(204.03deg, #FFC2E3 0, #CD6ECF 100%)
-			box-shadow 0 5px 10px rgba(216, 128, 212, .6)
+			box-shadow 0 -5px 10px rgba(216, 128, 212, .6)
 			.icon_back
 				stroke $w
 	&__input
 		width 100%
-		height 7.5rem
+		// height 7.5rem
 		font-family $bor
 		font-size 2.5rem
 		line-height 2
 		border-radius 10px
 		border none
 		outline none
-		padding 0 65px 0 20px
+		padding 15px 65px 10px 20px
 		color $b
+		height auto 
 		&::placeholder
 			font-family $r
 			font-size 2rem

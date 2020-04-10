@@ -42,11 +42,10 @@ app.scroll = {
 					event.preventDefault();
 					const wheelDelta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
 					if (wheelDelta < 0) {
-						$('html,body').animate({
-							scrollTop: secondSection.offsetTop - 100
-						},
-						500,
-						'swing');
+						window.scrollTo({
+							top: secondSection.offsetTop - 100,
+							behavior: "smooth"
+					});
 					}
 					isEvent = true;
 				}
