@@ -1,8 +1,8 @@
 {
 	"title": "Леди Хруст",
 	"gradient": "hrust",
-	"prev": "#",
-	"next": "#",
+	"prev": "eskimon.html",
+	"next": "kaktus.html",
 	"name": "hrust-title.png",
 	"nameLarge": "hrust-title-lg.png",
 	"image": "hrust.png",

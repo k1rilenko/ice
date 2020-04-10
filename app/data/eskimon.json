@@ -1,8 +1,8 @@
 {
 	"title": "Эскимон",
 	"gradient": "eskimon",
-	"prev": "#",
-	"next": "#",
+	"prev": "capitan.html",
+	"next": "hrust.html",
 	"name": "eskimon-title.png",
 	"nameLarge": "eskimon-title-lg.png",
 	"image": "eskimon.png",
