@@ -6,7 +6,7 @@ app.scroll = {
 		const secondSection = document.querySelector('.rules');
 
 		const scrollFunction = () => {
-			if (document.documentElement.clientWidth > 991) {
+			if (document.documentElement.clientWidth > 991 && scrollBtn) {
 				if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
 					scrollBtn.style.opacity = '1';
 				} else {
@@ -14,7 +14,7 @@ app.scroll = {
 				}
 			} else {
 				// eslint-disable-next-line no-lonely-if
-				if (document.body.scrollTop > 2000 || document.documentElement.scrollTop > 2000) {
+				if (scrollBtn && document.body.scrollTop > 2000 || document.documentElement.scrollTop > 2000 ) {
 					scrollBtn.style.opacity = '1';
 				} else {
 					scrollBtn.style.opacity = '0';
@@ -29,11 +29,12 @@ app.scroll = {
 				behavior: 'smooth'
 			});
 		};
-		window.onscroll = () => scrollFunction();
-		if (scrollBtn) {
-			scrollBtn.addEventListener('click', scrollToTop);
+		window.onscroll = () => {	
+			if (scrollBtn) {
+				scrollFunction();
+				scrollBtn.addEventListener('click', scrollToTop);
+			}
 		}
-
 
 		if (document.documentElement.clientWidth >= 1280 && firstSection) {
 			let isEvent = false;

@@ -1,7 +1,21 @@
 .rating-popup
 	display block
-	+below($lg)
-		min-height 100vh
+	+above($xl)
+		max-width 65%
+		margin 5rem auto
+		.hero-list
+			&__wrapper 
+				margin 0
+				margin-top 5rem
+				padding 0
+				display flex
+				justify-content space-around
+				align-items center
+			&__wrap
+				width 11rem
+				height 11rem
+				margin 0
+
 	&__wrapper
 		position relative
 		display flex
@@ -13,7 +27,7 @@
 			padding 0 3rem
 	&__container
 		position relative
-		padding 3rem 8%
+		padding 3rem 10%
 		+below($lg)
 			min-height 100vh
 		+below($sm)
