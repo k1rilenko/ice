@@ -5,7 +5,7 @@ app.header = {
 	},
 	changePosition() {
 		window.addEventListener('scroll', () => {
-			if (header && document.documentElement.scrollTop > 80) {
+			if (app.header.header && document.documentElement.scrollTop > 80) {
 				this.header.style = 'background-color: #ffffff;';
 			} else {
 				this.header.style = '';
