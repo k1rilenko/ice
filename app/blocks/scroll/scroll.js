@@ -44,8 +44,8 @@ app.scroll = {
 					if (wheelDelta < 0) {
 						window.scrollTo({
 							top: secondSection.offsetTop - 100,
-							behavior: "smooth"
-					});
+							behavior: 'smooth'
+						});
 					}
 					isEvent = true;
 				}
