@@ -3,6 +3,6 @@ mixin hero-list()
 		+e('ul').wrapper
 			for item in getData('heroes')
 				+e('li').item
-					+e('a').link(href="#{item.link}")
-						+e('div')(class="wrap gradient_#{item.background}")
+					+e('a').link(href="#{item.link}", data-slide="#{item.background}")
+						+e('div')(class="wrap gradient_#{item.background}") 
 							+e('img').image(src="./assets/images/heroes/#{item.image}")
