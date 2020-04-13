@@ -11,6 +11,10 @@
 		padding 5px 0
 		+below($sm)
 			padding 5px 0
+		+above($md)
+			padding 8px 0
+			.header__logo-image 
+				max-height 9rem
 		+above($xl)
 			padding 8px 0
 		+above($xxl)
@@ -49,7 +53,10 @@
 		display flex
 		align-items center
 		justify-content center
-		line-height 2.2
+		+above($xl)
+			height 5rem
+			width 11rem
+
 		&:hover
 			color $blue
 	&__user

@@ -1,32 +1,37 @@
 include /blocks/hero-list/hero-list
 mixin vote-popup(hero)
-	+b.rating-popup&attributes(attributes)
-		+e.container(class="gradient _#{hero.gradient}")
-			+e('a').button._prev.button_nav(href="#")
-				+b('svg').icon._link
-					use(xlink:href='#link-arrow')
-			+e('a').button._next.button_nav(href="#")
-				+b('svg').icon._link
-					use(xlink:href='#link-arrow')
-			+e.wrapper
-				+e('button').close.button_close
-					+b('svg').icon_close
-						use(xlink:href="#close")
-				+e.image
-					+e.image-block
-						+e('img').image-value(src="./assets/images/heroes-with-bg/#{hero.image}")
-						+e('img').name(src="./assets/images/heroes/#{hero.name}")
-				+e.form
-					+e.form-wrapper
-						+e('p').title.title
-							| У вас
-							+e('span').value #{hero.rating}
-							|  голосов!
-						+e('p').text Сколько голосов готовы отдать за #{hero.title}
-						+b.form._rating
-							+e.input-wrapper
-								+e('input').input(type="number" placeholder="0")
-							+e.button-wrapper
-								+e('button').button.button_success Голосовать
+	+b.vote-popup&attributes(attributes)
+		+e.container
+			+e.slider.vote-popup-slider
+				.swiper-container
+					.swiper-wrapper
+						for slide, index in getData('heroes')
+							.swiper-slide(id="#{slide.background}" class="gradient_#{slide.background}" data-slide="#{slide.background}" data-slide-index="#{index}")
+								+e.wrapper 
+									+e('button').close.button_close(data-fancybox-close)
+										+b('svg').icon_close
+											use(xlink:href="#close")
+									+e.image
+										+e.image-block
+											+e('img').image-value(src="./assets/images/heroes-with-bg/#{slide.image}")
+											+e('img').name(src="./assets/images/heroes/#{slide.name}")
+									+e.form
+										+e.form-wrapper
+											+e('p').title.title
+												| У вас
+												+e('span').value #{hero.rating}
+												|  голосов!
+											+e('p').text Сколько голосов готовы отдать за #{slide.title}
+											+b.form._rating
+												+e.input-wrapper
+													+e('input').input(type="number" placeholder="0")
+												+e.button-wrapper
+													+e('button').button.button_success Голосовать
+					.swiper-button-prev.swiper-button
+						+b('svg').icon._link
+							use(xlink:href='#link-arrow')
+					.swiper-button-next.swiper-button
+						+b('svg').icon._link
+							use(xlink:href='#link-arrow')
 		+hero-list
 
