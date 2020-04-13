@@ -11,8 +11,8 @@
 		flex-direction column
 		align-items center
 		overflow hidden
-		+above($sm)		
-			background linear-gradient(183.69deg, #008EF4 -.15%, #63D4FF 100%)	
+		+above($sm)
+			background linear-gradient(183.69deg, #008EF4 -.15%, #63D4FF 100%)
 			&:before
 				content ''
 				position absolute
@@ -21,7 +21,7 @@
 				background url(../images/top_xl_wave.svg) center no-repeat
 				background-size cover
 				width 100%
-				height 27.6rem	
+				height 27.6rem
 		+above($md)
 			padding-bottom 5rem
 			background linear-gradient(183.69deg, #008EF4 -.15%, #63D4FF 100%)
@@ -48,12 +48,12 @@
 				bottom calc(29rem + 27.6rem)
 				width 100%
 				height calc(100% - 29rem - 27.6rem)
-				background $w		
+				background $w
 		+above($lg)
 			background #008EF4
 		+above($xl)
-			.top__block		
-				&_background 
+			.top__block
+				&_background
 					right 15rem
 		+above($xxl)
 			align-items center
@@ -61,7 +61,7 @@
 			.top__block
 				&_text
 					margin-left 0
-				&_background 
+				&_background
 					right -10rem
 	&__head
 		text-align center
@@ -81,7 +81,7 @@
 		z-index 2
 		&_background
 			line-height 0
-			img 	
+			img
 				max-width 100%
 			+above($md)
 				position absolute
@@ -89,8 +89,8 @@
 				bottom 0
 				width 50%
 				z-index 1
-				img 
-					max-width inherit 
+				img
+					max-width inherit
 		&_text
 			padding 0 1.5rem
 		&_page
@@ -130,7 +130,7 @@
 				text-transform lowercase
 				padding 1.5rem 1rem
 				+above($xl)
-					padding 1rem 
+					padding 1rem
 					&:not(:first-child)
 						padding 1rem 2.5rem
 				&:first-child
@@ -163,6 +163,9 @@
 					width 24rem
 		&-body &
 			&-row
+				&:nth-child(-n+3)
+					.top__table-date_number
+						color $blue
 				&:last-child
 					border none
 	&__link-block
@@ -184,23 +187,23 @@
 			background-color $w
 			bottom 0
 			left 0
-	&_page 
+	&_page
 		+above($md)
-			.top__wrapper 
+			.top__wrapper
 				.top__block_text
 					margin-right auto
 				.top__block_background
 					right 0
 					text-align right
 		+above($md)
-			.top__wrapper 
+			.top__wrapper
 				.top__block_text
 					width 100%
-				.top__table 
+				.top__table
 					max-width 500px
 					&-date:nth-child(2)
 						width 200px
 		+above($xl)
-			.top__wrapper 
+			.top__wrapper
 				.top__table
-					margin 0 auto			
+					margin 0 auto
