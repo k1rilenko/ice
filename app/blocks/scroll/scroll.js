@@ -29,12 +29,12 @@ app.scroll = {
 				behavior: 'smooth'
 			});
 		};
-		window.onscroll = () => {	
+		window.onscroll = () => {
 			if (scrollBtn) {
 				scrollFunction();
 				scrollBtn.addEventListener('click', scrollToTop);
 			}
-		}
+		};
 
 		if (document.documentElement.clientWidth >= 1280 && firstSection) {
 			let isEvent = false;

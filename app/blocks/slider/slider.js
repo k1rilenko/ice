@@ -70,81 +70,80 @@ app.slider = {
 			nextEl: '.vote-popup-slider .swiper-button-next',
 			prevEl: '.vote-popup-slider .swiper-button-prev'
 		},
-		slidesPerView: 1, 
+		slidesPerView: 1,
 		spaceBetween: 10,
 		on: {
-			init: function () {
-				const activeSlide =  'gradient_' + document.querySelector('.vote-popup-slider .swiper-slide-active').dataset.slide;
-				const modalWrapper =  document.querySelector('.fancybox-slide');
+			init() {
+				const activeSlide = 'gradient_' + document.querySelector('.vote-popup-slider .swiper-slide-active').dataset.slide;
+				const modalWrapper = document.querySelector('.fancybox-slide');
 				switch (activeSlide) {
-					case "gradient_hrust":
+					case 'gradient_hrust':
 						modalWrapper.style.background = 'linear-gradient(195.7deg, #FFD84F -0.15%, #FF8A00 100%)';
 						break;
-					case "gradient_eskimon":
+					case 'gradient_eskimon':
 						modalWrapper.style.background = 'linear-gradient(204.03deg, #FCFF71 0%, #FFC632 99.52%)';
 						break;
-					case "gradient_raduga":
+					case 'gradient_raduga':
 						modalWrapper.style.background = 'linear-gradient(204.88deg, #FFC2D1 0%, #CA5393 98.42%)';
 						break;
-					case "gradient_kaktus":
+					case 'gradient_kaktus':
 						modalWrapper.style.background = 'linear-gradient(204.88deg, #D3FF76 0%, #62C812 98.42%)';
 						break;
-					case "gradient_capitan":
+					case 'gradient_capitan':
 						modalWrapper.style.background = 'linear-gradient(204.03deg, #FF9B71 0%, #FF3E32 99.52%)';
 						break;
-					case "gradient_rojoker":
+					case 'gradient_rojoker':
 						modalWrapper.style.background = 'linear-gradient(204.03deg, #AACCFF 0%, #4A5CFF 99.52%)';
 						break;
-					case "gradient_rifleniu":
+					case 'gradient_rifleniu':
 						modalWrapper.style.background = 'linear-gradient(204.03deg, #8CFFF8 0%, #0683AB 99.52%)';
 						break;
-					case "gradient_plombirovna":
+					case 'gradient_plombirovna':
 						modalWrapper.style.background = 'linear-gradient(204.03deg, #AAFAFF 0%, #37ABFF 99.52%)';
 						break;
-					case "gradient_lakomka":
+					case 'gradient_lakomka':
 						modalWrapper.style.background = 'linear-gradient(204.03deg, #FFC1F5 0%, #E039EF 99.52%)';
 						break;
 					default:
-						modalWrapper.style.background = 'transparent'
+						modalWrapper.style.background = 'transparent';
 				}
 			},
-			slideChangeTransitionStart: function () {
-				const activeSlide =  'gradient_' + document.querySelector('.vote-popup-slider .swiper-slide-active').dataset.slide;
-				const modalWrapper =  document.querySelector('.fancybox-slide');
+			slideChangeTransitionStart() {
+				const activeSlide = 'gradient_' + document.querySelector('.vote-popup-slider .swiper-slide-active').dataset.slide;
+				const modalWrapper = document.querySelector('.fancybox-slide');
 				switch (activeSlide) {
-					case "gradient_hrust":
+					case 'gradient_hrust':
 						modalWrapper.style.background = 'linear-gradient(195.7deg, #FFD84F -0.15%, #FF8A00 100%)';
 						break;
-					case "gradient_eskimon":
+					case 'gradient_eskimon':
 						modalWrapper.style.background = 'linear-gradient(204.03deg, #FCFF71 0%, #FFC632 99.52%)';
 						break;
-					case "gradient_raduga":
+					case 'gradient_raduga':
 						modalWrapper.style.background = 'linear-gradient(204.88deg, #FFC2D1 0%, #CA5393 98.42%)';
 						break;
-					case "gradient_kaktus":
+					case 'gradient_kaktus':
 						modalWrapper.style.background = 'linear-gradient(204.88deg, #D3FF76 0%, #62C812 98.42%)';
 						break;
-					case "gradient_capitan":
+					case 'gradient_capitan':
 						modalWrapper.style.background = 'linear-gradient(204.03deg, #FF9B71 0%, #FF3E32 99.52%)';
 						break;
-					case "gradient_rojoker":
+					case 'gradient_rojoker':
 						modalWrapper.style.background = 'linear-gradient(204.03deg, #AACCFF 0%, #4A5CFF 99.52%)';
 						break;
-					case "gradient_rifleniu":
+					case 'gradient_rifleniu':
 						modalWrapper.style.background = 'linear-gradient(204.03deg, #8CFFF8 0%, #0683AB 99.52%)';
 						break;
-					case "gradient_plombirovna":
+					case 'gradient_plombirovna':
 						modalWrapper.style.background = 'linear-gradient(204.03deg, #AAFAFF 0%, #37ABFF 99.52%)';
 						break;
-					case "gradient_lakomka":
+					case 'gradient_lakomka':
 						modalWrapper.style.background = 'linear-gradient(204.03deg, #FFC1F5 0%, #E039EF 99.52%)';
 						break;
 					default:
-						modalWrapper.style.background = 'transparent'
+						modalWrapper.style.background = 'transparent';
 				}
-
-			},
-		}, 
+			}
+		}
 	},
 	optionsGifts: {
 		pagination: {
