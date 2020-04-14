@@ -4,15 +4,6 @@ app.votePopup = {
 		
     const votePopupBtn = document.querySelectorAll('.rating__button');
     const votePopupHeroLink = document.querySelectorAll('.hero-list__link');
-    console.log(document.querySelectorAll('.vote-popup-slider .swiper-slide'))
-
-    const logButtonIndex = (event, buttonIndex) => {
-      // event.preventDefault();
-      const target = event.target;
-      const dataSrc = target.dataset.src;
-      console.log('buttonIndex:', buttonIndex);   
-      console.log(dataSrc);
-    }
     
     const showPopup = () => {
       $.fancybox.open({
@@ -23,20 +14,19 @@ app.votePopup = {
           toolbar: false,
           afterShow : function( instance, current ) {
             console.info( 'done!' );
+          },
+          afterClose : function(instance) {
+            location.reload()
           }
+          
         }
       });
     }
 
-
-
-
     for (let i = 0; i < votePopupBtn.length; i++) {
       let button = votePopupBtn[i];
       button.addEventListener('click', () => {
-        logButtonIndex(event, i);
         showPopup();
-        
       });
     }
 
@@ -51,9 +41,4 @@ app.votePopup = {
     } 
 
   }
-  
-  // $('a[data-slide]').click(function(e){
-  //   e.preventDefault();
-  //   mySwiper.swipeTo( $(this).data('slide') );
-  // });
 };

@@ -19,8 +19,6 @@ app.slider = {
 		app.slider.ratingSlider = new Swiper('.rating__slider .swiper-container', this.optionsRating);
 		app.slider.voteSlider = new Swiper('.vote-popup-slider .swiper-container', this.optionsVote);
 
-
-
 		window.addEventListener('load', () => {
 			if (window.innerWidth >= 1280) {
 				app.slider.heroSlider = new Swiper('.hero__slider .swiper-container', this.optionsHero);
@@ -74,9 +72,11 @@ app.slider = {
 		spaceBetween: 10,
 		on: {
 			init: function () {
-				const activeSlide =  'gradient_' + document.querySelector('.vote-popup-slider .swiper-slide-active').dataset.slide;
-				const modalWrapper =  document.querySelector('.fancybox-slide');
-				switch (activeSlide) {
+				const activeSlideOnInit = 'gradient_' + document.querySelector('.vote-popup-slider .swiper-slide-active');
+				console.log('activeSlide: ', activeSlideOnInit);
+
+				const modalWrapper = document.querySelector('.fancybox-bg');
+				switch (activeSlideOnInit) {
 					case "gradient_hrust":
 						modalWrapper.style.background = 'linear-gradient(195.7deg, #FFD84F -0.15%, #FF8A00 100%)';
 						break;
@@ -110,8 +110,8 @@ app.slider = {
 			},
 			slideChangeTransitionStart: function () {
 				const activeSlide =  'gradient_' + document.querySelector('.vote-popup-slider .swiper-slide-active').dataset.slide;
-				const modalWrapper =  document.querySelector('.fancybox-slide');
-				switch (activeSlide) {
+				const modalWrapper =  document.querySelector('.fancybox-bg');
+				switch (activeSlide) { 
 					case "gradient_hrust":
 						modalWrapper.style.background = 'linear-gradient(195.7deg, #FFD84F -0.15%, #FF8A00 100%)';
 						break;
