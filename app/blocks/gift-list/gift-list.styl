@@ -1,0 +1,25 @@
+.gift-list
+	display block
+	+below($lg)
+		display none
+	&__item 
+		transition .3s
+		&:hover
+			transform scale(1.1)
+	&__wrapper
+		display flex
+		align-items center
+		justify-content space-between
+		margin-top 6rem
+	&__wrap
+		position relative
+		min-width 90px
+		min-height 90px
+		border-radius 50%
+	&__image
+		position absolute
+		max-width 100px
+		max-height 120px
+		bottom 0
+		left 50%
+		transform translateX(-50%)

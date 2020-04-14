@@ -11,8 +11,8 @@ mixin gift()
 		+b.slider.gift__slider
 			.swiper-container.swiper-gifts 
 				.swiper-wrapper
-					for slide in getData('gifts')
-						a(href="javascript:;", data-fancybox, data-type="ajax", data-src="/vote-popup.html").swiper-slide.gift-modal
+					for slide, index in getData('gifts') 
+						a.swiper-slide.gift-modal(data-slide-index="#{index}")
 							+e('div').container
 								+e('div').wrapper
 									+e('div').image-wrap

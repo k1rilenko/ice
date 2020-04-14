@@ -1,0 +1,12 @@
+extends /blocks/layout-default/layout-popup
+
+include /blocks/header/header
+include /blocks/sprite/sprite
+include /blocks/gift-popup/gift-popup
+
+
+block content
+	+sprite
+	+gift-popup(getData('hrust'))
+
+

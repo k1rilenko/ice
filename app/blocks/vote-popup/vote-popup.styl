@@ -2,6 +2,8 @@
 	display block
 	&.fancybox-content
 		background transparent
+		padding 10px 10px 30px
+		overflow visible
 		&__wrapper 
 			margin 0 auto 
 			margin-bottom 4rem
@@ -144,9 +146,15 @@
 				display none
 			&.swiper-button-prev
 				transform scale(-1, 1)
-				+below($md)
+				left -10rem
+				+below($lg)
+					left 10px
 					transform scale(-1, 1) translateY(-6rem)				
 			&.swiper-button-next
+				right -10rem
+				+below($lg)
+					transform translateY(-6rem)
+					right 10px
 				.icon 
 					margin-left 4px
 			&:hover
@@ -155,5 +163,4 @@
 				border-color $w
 				.icon 
 					stroke $w
-	&.fancybox-content
-		padding 10px 10px 30px
+
