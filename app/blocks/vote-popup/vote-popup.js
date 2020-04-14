@@ -39,8 +39,8 @@ app.votePopup = {
 					const dataSlide = link.dataset.slide;
 					const slideIndex = document.getElementById(dataSlide).dataset.slideIndex;
 					app.slider.voteSlider.slideTo(slideIndex, 1000, false);
-				}); // end event listener
-			}  // end for
-		}); // end ajaxComplete
+				});
+			}
+		});
 	}
 };

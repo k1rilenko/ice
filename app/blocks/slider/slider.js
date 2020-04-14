@@ -5,8 +5,6 @@ app.slider = {
 	giftSlider: null,
 	ratingSlider: null,
 	heroSlider: null,
-	// voteSlider: null,
-	// giftSlider: null,
 	init() {
 		if (document.querySelector('.swiper-rules')) {
 			app.slider.rulesSlider = new Swiper('.swiper-rules', this.optionsRule);
@@ -114,11 +112,11 @@ app.slider = {
 					clickable: true
 				},
 				slidesPerView: 1,
-				spaceBetween: 10, 
+				spaceBetween: 10,
 				grabCursor: true,
-				autoHeight: true,
+				autoHeight: true
 			});
-		}),
+		});
 		window.addEventListener('load', () => {
 			if (window.innerWidth >= 1280) {
 				app.slider.heroSlider = new Swiper('.hero__slider .swiper-container', this.optionsHero);
