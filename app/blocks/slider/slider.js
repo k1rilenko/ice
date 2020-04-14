@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-unused-vars */
 app.slider = {
 	rulesSlider: null,
@@ -18,7 +19,7 @@ app.slider = {
 			this.destroySlider(app.slider.giftSlider, 768);
 		}
 		app.slider.ratingSlider = new Swiper('.rating__slider .swiper-container', this.optionsRating);
-		$(document).ajaxComplete(function() {
+		$(document).ajaxComplete(() => {
 			app.slider.voteSlider = new Swiper('.vote-popup-slider .swiper-container', {
 				updateOnWindowResize: true,
 				navigation: {
@@ -102,7 +103,6 @@ app.slider = {
 					}
 				}
 			});
-
 			app.slider.giftSlider = new Swiper('.gift-popup-slider .swiper-container', {
 				updateOnWindowResize: true,
 				navigation: {
@@ -119,8 +119,6 @@ app.slider = {
 				autoHeight: true,
 			});
 		}),
-
-
 		window.addEventListener('load', () => {
 			if (window.innerWidth >= 1280) {
 				app.slider.heroSlider = new Swiper('.hero__slider .swiper-container', this.optionsHero);
