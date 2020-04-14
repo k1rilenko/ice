@@ -4,10 +4,10 @@ mixin header(isLoggined, logo, links)
 			+e.wrapper
 				if logo
 					+e.logo
-						+e('a').logo-link(href="#")
+						+e('a').logo-link(href="/")
 							+e('img').logo-image(src="./assets/images/logo.png")
 				else
-					+e('button').back.button
+					+e('a').back.button(href="/")
 						+b('svg').icon._back
 							use(xlink:href='#back')
 				if !links

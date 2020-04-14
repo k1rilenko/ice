@@ -1,6 +1,6 @@
 [
 	{
-		"link": "#",
+		"link": "./rifleniu.html",
 		"background": "rifleniu",
 		"image": "rifleniu.png",
 		"name": "rifleniu-title.png",
@@ -11,7 +11,7 @@
 		"imagewidthBackground": "rifleniu.png"
 	},
 	{
-		"link": "#",
+		"link": "./hrust.html",
 		"background": "hrust",
 		"image": "hrust.png",
 		"imageLarge": "hrust-lg.png",
@@ -23,7 +23,7 @@
 		"imagewidthBackground": "hrust.png"
 	},
 	{
-		"link": "#",
+		"link": "./capitan.html",
 		"background": "capitan",
 		"image": "capitan.png",
 		"imageLarge": "capitan-lg.png",
@@ -35,7 +35,7 @@
 		"imagewidthBackground": "capitan.png"
 	},
 	{
-		"link": "#",
+		"link": "./eskimon.html",
 		"background": "eskimon",
 		"image": "eskimon.png",
 		"imageLarge": "eskimon2-lg.png",
@@ -47,7 +47,7 @@
 		"imagewidthBackground": "eskimon.png"
 	},
 	{
-		"link": "#",
+		"link": "./kaktus.html",
 		"background": "kaktus",
 		"image": "kaktus.png",
 		"imageLarge": "kaktus-lg.png",
@@ -59,7 +59,7 @@
 		"imagewidthBackground": ""
 	},
 	{
-		"link": "#",
+		"link": "./lakomka.html",
 		"background": "lakomka",
 		"image": "lakomka.png",
 		"imageLarge": "lakomka-lg.png",
@@ -71,7 +71,7 @@
 		"imagewidthBackground": "lakomka.png"
 	},
 	{
-		"link": "#",
+		"link": "./plombirovna.html",
 		"background": "plombirovna",
 		"image": "plombirovna.png",
 		"imageLarge": "plombirovna-lg.png",
@@ -83,7 +83,7 @@
 		"imagewidthBackground": "plombirovna.png"
 	},
 	{
-		"link": "#",
+		"link": "./raduga.html",
 		"background": "raduga",
 		"image": "raduga.png",
 		"imageLarge": "raduga-lg.png",
@@ -95,7 +95,7 @@
 		"imagewidthBackground": "raduga.png"
 	},
 	{
-		"link": "#",
+		"link": "./rojoker.html",
 		"background": "rojoker",
 		"image": "rojoker.png",
 		"imageLarge": "rojoker-lg.png",
