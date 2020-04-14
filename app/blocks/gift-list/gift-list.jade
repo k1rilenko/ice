@@ -1,0 +1,8 @@
+mixin gift-list()
+	+b.gift-list&attributes(attributes)
+		+e('ul').wrapper
+			for item, index in getData('gifts')
+				+e('li').item
+					+e('a').link(href="#{item.link}", data-slide="#{index}")
+						+e('div')(class="wrap") 
+							+e('img').image(src="./assets/images/gifts/#{item.image}")

@@ -1,0 +1,202 @@
+.gift-popup
+	display block
+	&.fancybox-content
+		background transparent
+		padding 10px 10px 30px
+		max-width 980px
+		overflow visible
+		+below($lg) 
+			max-width 90%
+		+below($md) 
+			max-width 100%
+	&-slider
+		border-radius 20px
+		overflow hidden
+		box-shadow 0 1px 1px rgba(98, 98, 98, .08), 0 2px 2px rgba(98, 98, 98, .08), 0 4px 4px rgba(98, 98, 98, .08), 0 8px 8px rgba(98, 98, 98, .08), 0 16px 16px rgba(98, 98, 98, .08)
+		.swiper-slide
+			background $w 
+		.swiper-pagination
+			display none 
+			+below($sm)
+				display block
+				top 22rem 
+				left 50%
+				transform translateX(-50%)
+				&-bullet
+					margin 0 5px
+					width 10px
+					height 10px
+					background-color $grey
+					opacity 1
+					&-active
+						box-shadow 0 0 0 2.5px $w
+					&:first-child
+						&.swiper-pagination-bullet-active
+							background $kaktus
+					&:nth-child(2)
+						&.swiper-pagination-bullet-active
+							background $plombirovna
+					&:nth-child(3)
+						&.swiper-pagination-bullet-active
+							background $raduga
+					&:nth-child(4)
+						&.swiper-pagination-bullet-active
+							background linear-gradient(204.03deg, #8A3918 0, #622C18 99.52%)
+					&:nth-child(5)
+						&.swiper-pagination-bullet-active
+							background $plombirovna
+					&:nth-child(6)
+						&.swiper-pagination-bullet-active
+							background $kaktus
+					&:nth-child(7)
+						&.swiper-pagination-bullet-active
+							background $capitan
+		.swiper-button
+			display flex 
+			justify-content center
+			align-items center
+			width 6rem
+			height 6rem
+			border-radius 50%
+			background $w
+			border 2px solid $grey
+			transition .3s
+			box-shadow 0 5px 15px transparent
+			&:after
+				display none
+			+below($sm) 
+				border none 
+				background transparent 
+				.icon
+					opacity 1 
+					stroke #ccc
+			&.swiper-button-prev
+				transform scale(-1, 1) translateY(-50%)	
+				left -10rem
+				+below($sm)
+					left 10px
+					top 26rem
+			&.swiper-button-next
+				transform translateY(-50%)	
+				right -10rem
+				+below($sm)
+					right 10px
+					top 26rem
+				.icon 
+					margin-left 4px
+			&:hover
+				background linear-gradient(283.38deg, #008EF4 0, #63D4FF 100%, #63D4FF 100%)
+				box-shadow 0 5px 15px rgba(44, 173, 250, .37)
+				border-color $w
+				+below($sm)
+					background transparent 
+					box-shadow none 
+					.icon 
+						opacity 1
+						stroke #ccc
+
+
+	&__wrapper
+		display flex
+		+below($lg)
+			flex-direction column		
+	&__image
+		width 380px
+		max-height 480px
+		+below($lg)
+			width auto
+			max-height 500px		
+		+below($md)
+			max-height 300px		
+		+below($sm)
+			max-height 200px		
+		&-block 
+			width 100%
+			height 100%
+			+below($lg)
+				width auto
+				max-height 500px
+			+below($md)
+				max-height 300px
+			+below($sm)
+				max-height 200px
+		&-value 
+			object-fit cover 
+			width 100%
+			height 100%
+			+below($lg)
+				max-height 500px
+			+below($md)
+				max-height 300px
+			+below($sm)
+				max-height 200px
+	&__description 
+		width 600px
+		display flex
+		flex-direction column
+		justify-content space-between
+		+below($lg)
+			width 100%
+		+below($sm)
+			.button_success
+				padding 2.1rem 1rem 1.4rem 
+		.description
+			&-text 
+				height 100%
+				display flex
+				flex-direction column
+				justify-content center
+				align-items center
+				padding 0 10rem
+				+below($lg)
+					padding 3rem 5rem
+				+below($sm)
+					padding 6rem 2rem 3rem
+				&__title
+					margin-bottom 1rem
+					text-align center
+					+below($sm)
+						font-size 2.2rem
+						text-align left
+				&__text 
+					text-align center
+					line-height 25px
+					font-size 1.8rem
+					font-family $r
+					+below($sm)
+						text-align left
+			&-details
+				display flex
+				justify-content space-between
+				min-height 140px
+				border-top 2px solid $grey
+				&__value-wrapper
+					flex-basis 50%
+					display flex
+					flex-direction column
+					justify-content center
+					align-items center
+					border-right 2px solid $grey
+					+below($sm)
+						flex-basis 40%
+						border none
+				&__points
+					font-size 4.5rem
+					font-weight normal
+					font-family $bor
+					margin-bottom 1rem
+				&__units
+					font-family $r
+					font-size 1.4rem
+					font-weight bold
+				&__button-wrapper
+					flex-basis 50%
+					display flex
+					justify-content center
+					align-items center
+					+below($sm)
+						flex-basis 60%
+	&__close
+		position absolute
+		right 20px
+		top 20px

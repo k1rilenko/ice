@@ -5,6 +5,7 @@ app.slider = {
 	ratingSlider: null,
 	heroSlider: null,
 	// voteSlider: null,
+	// giftSlider: null,
 	init() {
 		if (document.querySelector('.swiper-rules')) {
 			app.slider.rulesSlider = new Swiper('.swiper-rules', this.optionsRule);
@@ -101,7 +102,25 @@ app.slider = {
 					}
 				}
 			});
+
+			app.slider.giftSlider = new Swiper('.gift-popup-slider .swiper-container', {
+				updateOnWindowResize: true,
+				navigation: {
+					nextEl: '.gift-popup-slider .swiper-button-next',
+					prevEl: '.gift-popup-slider .swiper-button-prev'
+				},
+				pagination: {
+					el: '.gift-popup-slider .swiper-pagination',
+					clickable: true
+				},
+				slidesPerView: 1,
+				spaceBetween: 10, 
+				grabCursor: true,
+				autoHeight: true,
+			});
 		}),
+
+
 		window.addEventListener('load', () => {
 			if (window.innerWidth >= 1280) {
 				app.slider.heroSlider = new Swiper('.hero__slider .swiper-container', this.optionsHero);
