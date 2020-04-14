@@ -26,6 +26,8 @@ app.slider = {
 				},
 				slidesPerView: 1,
 				spaceBetween: 10,
+				grabCursor: true,
+				// autoHeight: true,
 				on: {
 					init() {
 						const activeSlide = 'gradient_' + document.querySelector('.vote-popup-slider .swiper-slide-active').dataset.slide;
@@ -62,7 +64,7 @@ app.slider = {
 								modalWrapper.style.background = 'transparent';
 						}
 					},
-					slideChangeTransitionStart() {
+					transitionStart() {
 						const activeSlide = 'gradient_' + document.querySelector('.vote-popup-slider .swiper-slide-active').dataset.slide;
 						const modalWrapper = document.querySelector('.fancybox-slide');
 						switch (activeSlide) {

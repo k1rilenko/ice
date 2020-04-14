@@ -1,6 +1,5 @@
 .vote-popup
 	display block
-	display none
 	&.fancybox-content
 		background transparent
 		&__wrapper 
@@ -36,20 +35,40 @@
 				padding 3rem
 		+below($md)
 			flex-direction column
+			.vote-popup__image
+				padding 30px 0
+				width 28rem
+				height 28rem
+				margin 0 auto 
+				margin-bottom 4rem
+				&-value 
+					max-width 100%
+					height auto
+					max-height 100%
+					margin 0 auto
+			.vote-popup__form
+				padding 10px
+				&-wrapper 
+					max-width 100%
 		+below($sm)
-			padding 0 3rem
+			padding 0 0 10px
 	&__container
 		position relative
 		padding 3rem 0
 		max-width 980px		 
 		& + .hero-list 
 			max-width 980px
+		+below($lg)
+			padding 0
 	&__image
 		width 50%
 		padding 6.5rem 10rem 9.5rem
 		display flex
 		justify-content center
 		border-right 1px dashed $grey
+		&-value 
+			height 32rem
+			width auto
 		+below($md)
 			width 100%
 			border-right none
@@ -103,11 +122,11 @@
 		right 20px
 		top 20px
 	&-slider
-		.swiper-container 
+		border-radius 20px
+		overflow hidden
+		box-shadow 0 1px 1px rgba(124, 67, 0, .08), 0 2px 2px rgba(124, 67, 0, .08), 0 4px 4px rgba(124, 67, 0, .08), 0 8px 8px rgba(124, 67, 0, .08), 0 16px 16px rgba(124, 67, 0, .08)
 		.swiper-slide
 			background transparent 
-			border-radius 20px
-			box-shadow 0 1px 1px rgba(124, 67, 0, .08), 0 2px 2px rgba(124, 67, 0, .08), 0 4px 4px rgba(124, 67, 0, .08), 0 8px 8px rgba(124, 67, 0, .08), 0 16px 16px rgba(124, 67, 0, .08)
 		.swiper-button
 			display flex 
 			justify-content center
@@ -119,10 +138,14 @@
 			border 2px solid $grey
 			transition .3s
 			box-shadow 0 5px 15px transparent
+			+below($md)
+				transform translateY(-6rem)
 			&:after
 				display none
 			&.swiper-button-prev
 				transform scale(-1, 1)
+				+below($md)
+					transform scale(-1, 1) translateY(-6rem)				
 			&.swiper-button-next
 				.icon 
 					margin-left 4px
@@ -132,3 +155,5 @@
 				border-color $w
 				.icon 
 					stroke $w
+	&.fancybox-content
+		padding 10px 10px 30px

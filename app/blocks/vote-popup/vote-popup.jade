@@ -21,7 +21,7 @@ mixin vote-popup(hero)
 												| У вас
 												+e('span').value #{hero.rating}
 												|  голосов!
-											+e('p').text Сколько голосов готовы отдать за #{slide.title}
+											+e('p').text Сколько голосов готовы отдать за #{slide.alt}
 											+b.form._rating
 												+e.input-wrapper
 													+e('input').input(type="number" placeholder="0")
