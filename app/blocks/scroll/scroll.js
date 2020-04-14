@@ -29,12 +29,12 @@ app.scroll = {
 				behavior: 'smooth'
 			});
 		};
-		window.onscroll = () => {	
+		window.onscroll = () => {
 			if (scrollBtn) {
 				scrollFunction();
 				scrollBtn.addEventListener('click', scrollToTop);
 			}
-		}
+		};
 
 		if (document.documentElement.clientWidth >= 1280 && firstSection) {
 			let isEvent = false;
@@ -45,8 +45,8 @@ app.scroll = {
 					if (wheelDelta < 0) {
 						window.scrollTo({
 							top: secondSection.offsetTop - 100,
-							behavior: "smooth"
-					});
+							behavior: 'smooth'
+						});
 					}
 					isEvent = true;
 				}

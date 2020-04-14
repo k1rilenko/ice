@@ -1,7 +1,9 @@
+/* eslint-disable no-loop-func */
+/* eslint-disable arrow-parens */
 /* eslint-disable no-unused-vars */
 app.votePopup = {
 	init() {
-		
+
     const votePopupBtn = document.querySelectorAll('.rating__button');
     const votePopupHeroLink = document.querySelectorAll('.hero-list__link');
     
@@ -16,7 +18,7 @@ app.votePopup = {
             console.info( 'done!' );
           },
           afterClose : function(instance) {
-            location.reload()
+            // location.reload()
           }
           
         }
@@ -31,7 +33,7 @@ app.votePopup = {
     }
 
     for (let i = 0; i < votePopupHeroLink.length; i++) {
-      let link = votePopupHeroLink[i];     
+      let link = votePopupHeroLink[i];
       link.addEventListener('click', (event) => {
         event.preventDefault();
         const dataSlide = link.dataset.slide;
@@ -42,3 +44,4 @@ app.votePopup = {
 
   }
 };
+ 

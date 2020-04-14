@@ -8,7 +8,7 @@ mixin vote-popup(hero)
 						for slide, index in getData('heroes')
 							.swiper-slide(id="#{slide.background}" class="gradient_#{slide.background}" data-slide="#{slide.background}" data-slide-index="#{index}")
 								+e.wrapper 
-									+e('button').close.button_close
+									+e('button').close.button_close(data-fancybox-close)
 										+b('svg').icon_close
 											use(xlink:href="#close")
 									+e.image
