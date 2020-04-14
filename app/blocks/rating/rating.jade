@@ -21,7 +21,7 @@ mixin rating()
 			+e.slider.slider
 				.swiper-container
 					.swiper-wrapper
-						for slide in getData('heroes')
+						for slide, index in getData('heroes')
 							.swiper-slide
 								+e('a')(class="item_#{slide.background}")
 									+e('div').wrapper
@@ -33,7 +33,7 @@ mixin rating()
 											+e('span').percent= slide.percent + "%"
 											+e('span').point= slide.point + " голосов"
 										+e.button-wrapper
-											+e('button')(data-src="#{slide.background}").button.button._success Голосовать
+											+e('button')(data-src="#{slide.background}" data-slide-index="#{index}").button.button._success Голосовать
  
 					.swiper-pagination
 
