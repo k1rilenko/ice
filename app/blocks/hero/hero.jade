@@ -12,8 +12,8 @@ mixin hero()
 										+e('div').wrapper
 											+e('div')(class="image-wrap_#{slide.background}")
 												+e.image-block
-													+e('img').value(src="./assets/images/heroes/#{slide.image}" alt="#{slide.alt}")
-												+e('img').name(src="./assets/images/heroes/#{slide.name}" alt="#{slide.alt}")
+													+e('img').value(src="./assets/images/heroes/#{slide.imageLarge}" alt="#{slide.alt}")
+												+e('img').name(src="./assets/images/heroes/#{slide.nameLarge}" alt="#{slide.alt}")
 						.swiper-button-prev.swiper-button
 							+b('svg').icon._link
 								use(xlink:href='#link-arrow')

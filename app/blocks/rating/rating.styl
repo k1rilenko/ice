@@ -14,6 +14,12 @@
 		font-size 1.8rem
 		line-height 1.39
 		margin-bottom 5.2rem
+	&__button
+		&-wrapper 
+			display flex
+			justify-content center
+			transition .6s
+			opacity 1
 	&__item
 		text-decoration none
 		&_capitan
@@ -78,21 +84,30 @@
 		margin-bottom 1.7rem
 		margin-left auto
 		margin-right auto
+		&_capitan 
+			.rating__name 
+				bottom -20px
 		&:before
 		&:after
 			position absolute
 			content ''
 			border-radius 50%
+			transition .6s 
+			opacity 1
 		&:before
-			left 0
-			top 10px
+			left 10px
+			top 5px
 			width 37px
 			height 37px
+			+below($lg)
+				top -20px
 		&:after
-			left 45px
+			left 48px
 			top 0
 			width 13px
 			height 13px
+			+below($lg)
+				top -30px
 		+below($xl)
 			width 24rem
 			height 24rem
@@ -109,9 +124,13 @@
 		bottom 15px
 		left 50%
 		transform translateX(-50%)
+		transition .6s
+		opacity 1
 	&__num-value
 		display flex
 		flex-direction column
+		transition .6s
+		opacity 1
 	&__percent
 		margin-bottom 1.3rem
 		font-family $bor
@@ -122,37 +141,12 @@
 		line-height 3rem
 		color $blue
 		margin-bottom 2.3rem
+	&__wrapper 
+		transition .6s
 	&__slider
-		padding-bottom 5rem
-		+above($lg)
-			max-width 1000px
-			margin 0 auto
-		+above($xl)
-			max-width 1200px
-			margin 0 auto
-		+above($xxl)
-			max-width 1600px
-			margin 0 auto
-		.swiper-pagination
-			position relative
-			bottom 0
-			padding-top 3.9rem
-			margin-top 3.9rem
-			z-index 4
+		max-width 1200px
+		margin 0 auto
 		.swiper
-			&-pagination-bullet
-				width 1.5rem
-				height 1.5rem
-				background-color $grey
-				border-radius 50%
-				opacity 1
-				margin .375rem
-				border 2.5px solid transparent
-				transition .3s
-				&.swiper-pagination-bullet-active
-					background linear-gradient(195.7deg, #FFD84F -.15%, #FF8A00 100%)
-					border-color $grey
-					transform scale(1.5)
 			&-button
 				display none
 				+above($md)
@@ -166,12 +160,13 @@
 					border 2px solid $grey
 					transition .3s
 					box-shadow 0 5px 15px transparent
-					top 30%
+					top 50%					
 					&:after
 						display none
 					&.swiper-button-prev
-						transform scale(-1, 1)
+						transform scale(-1, 1) translateY(calc(-50% - 5rem))
 					&.swiper-button-next
+						transform translateY(calc(-50% - 5rem))
 						.icon
 							margin-left 4px
 					&:hover
@@ -180,76 +175,48 @@
 						border-color $w
 						.icon
 							stroke $w
-				+above($xxl)
-					top 27%
-			&-slide
-				transition .5s
-				.rating__image-wrap_capitan
-					.rating__name
-						bottom -2rem
-				.rating__name
+			&-container 
+				width 100%
+				padding 3rem 0	
+			&-slide 
+				width 300px
+				padding 0 15px
+				transition .6s
+				&:not(.swiper-slide-prev):not(.swiper-slide-next):not(.swiper-slide-nth-prev-2):not(.swiper-slide-nth-next-2):not(.swiper-slide-active) 
 					opacity 0
-					transition opacity .3s
-				.rating__image-wrap:before, .rating__image-wrap:after
-					opacity 0
-					transition opacity .3s
-				.rating__num-value
-					opacity 0
-					transition opacity .3s
-				.rating__button-wrapper
-					opacity 0
-					transition opacity .3s
-					display flex
-					justify-content center
-					align-items center
-				&.swiper-slide-active
-					z-index 3
-					transform translateY(2rem)
-					.rating__image-wrap:before, .rating__image-wrap:after
-						opacity 1
-					.rating__name
-						opacity 1
-					.rating__num-value
-						opacity 1
-					.rating__button-wrapper
-						opacity 1
-				&:not(.swiper-slide-prev):not(.swiper-slide-next):not(.swiper-slide-nth-prev-2):not(.swiper-slide-nth-next-2):not(.swiper-slide-active)
-					// overflow hidden
-					transform scale(0)
-					opacity 0
-				&.swiper-slide-prev, &.swiper-slide-next
-					opacity .8
-					transform scale(.8)
-					z-index 2
-				&.swiper-slide-nth-prev-2, &.swiper-slide-nth-next-2
+				&:not(.swiper-slide-prev):not(.swiper-slide-next):not(.swiper-slide-active)
 					opacity .4
-					transform scale(.6)
-					z-index 1
-				&.swiper-slide-prev
-					+above($lg)
-						transform translate(6rem) scale(.8)
-					+above($xl)
-						transform translate(5rem) scale(.8)
-					+above($xxl)
-						transform translate(10rem) scale(.8)
-				&.swiper-slide-next
-					+above($lg)
-						transform translate(-6rem) scale(.8)
-					+above($xl)
-						transform translate(-5rem) scale(.8)
-					+above($xxl)
-						transform translate(-10rem) scale(.8)
-				&.swiper-slide-nth-prev-2
-					+above($lg)
-						transform translate(15rem) scale(.6)
-					+above($xl)
-						transform translate(15rem) scale(.6)
-					+above($xxl)
-						transform translate(25rem, -2rem) scale(.6)
-				&.swiper-slide-nth-next-2
-					+above($lg)
-						transform translate(-15rem) scale(.6)
-					+above($xl)
-						transform translate(-15rem) scale(.6)
-					+above($xxl)
-						transform translate(-25rem, -2rem) scale(.6)
+					margin-top -4rem
+					margin-bottom 4rem
+					+below($lg)
+						opacity 0
+					.rating
+						&__wrapper 
+							transform scale(.8) 
+						&__name 
+							opacity 0
+						&__button-wrapper 
+							opacity 0
+						&__image-wrap 
+							&:before
+							&:after
+								opacity 0
+						&__num-value 
+							opacity 0
+				&:not(.swiper-slide-nth-prev-2):not(.swiper-slide-nth-next-2):not(.swiper-slide-active)
+					opacity .8
+					margin-top -2rem
+					margin-bottom 2rem
+					.rating
+						&__wrapper 
+							transform scale(.9) 
+						&__name
+							opacity 0
+						&__button-wrapper 
+							opacity 0
+						&__image-wrap 
+							&:before
+							&:after
+								opacity 0
+						&__num-value 
+							opacity 0
