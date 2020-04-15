@@ -1,7 +1,7 @@
 mixin enter()
 	+b.popup&attributes(attributes)
 		+e.wrapper
-			+e('button').button.button_close
+			+e('button').button.button_close(data-fancybox-close)
 				+b('svg').icon_close
 					use(xlink:href="#close")
 			+b.tabs

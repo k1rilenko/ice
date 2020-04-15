@@ -8,3 +8,4 @@ app.questions.init();
 app.map.mapLoading();
 app.votePopup.init();
 app.giftPopup.init();
+
