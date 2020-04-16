@@ -178,8 +178,10 @@ app.slider = {
 		centeredSlides: true,
 		slidesPerView: 'auto',
 		loop: true,
-		freeMode: true,
-		updateOnWindowResize: true,
+		speed: 1000,
+    autoplay: {
+      delay: 3000,
+    },
 		coverflowEffect: {
 			rotate: 0,
 			stretch: 60,
@@ -193,6 +195,9 @@ app.slider = {
 		},
 		on: {
 			init() {
+				setTimeout(() => {
+					app.slider.ratingSlider.update()
+				}, 500)
 				const activeIndex = this.activeIndex;
 				const realIndex = this.slides.eq(activeIndex).attr('data-swiper-slide-index');
 				$('.rating__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').prev().prev().addClass('swiper-slide-nth-prev-2');
@@ -215,8 +220,10 @@ optionsHero: {
 	centeredSlides: true,
 	slidesPerView: 'auto',
 	loop: true,
-	freeMode: true,
-	updateOnWindowResize: true,
+	speed: 1000,
+    autoplay: {
+      delay: 3000,
+    },
 	coverflowEffect: {
 		rotate: 0,
 		depth: 100, 
@@ -246,6 +253,11 @@ optionsHero: {
 		},
 	on: {
 		init() {
+			setTimeout(() => {
+				app.slider.heroSlider.update()
+				app.slider.heroSlider.slideNext()
+				app.slider.heroSlider.autoplay.start();
+			}, 500)
 			const activeIndex = this.activeIndex;
 			const realIndex = this.slides.eq(activeIndex).attr('data-swiper-slide-index');
 			$('.hero__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').prev().prev().addClass('swiper-slide-nth-prev-2');
