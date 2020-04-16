@@ -79,6 +79,12 @@ import('helpers/svg-size')
 		overflow hidden
 		box-shadow 0 5px 15px rgba(44, 173, 250, .37)
 		z-index 1
+		&:disabled 
+			&:before, &:after
+				content none
+			background #B5B5B5	
+			color $grey
+			box-shadow none
 		&:before, &:after
 			content ''
 			display block
@@ -181,6 +187,9 @@ import('helpers/svg-size')
 		font-size 1.8rem
 		line-height 2
 		padding 1rem 2.5rem
+		&:disabled 
+			background transparent
+			pointer-events none
 		&_checkbox
 			position absolute
 			opacity 0

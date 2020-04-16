@@ -8,17 +8,15 @@
 	background-position center bottom
 	position relative
 	overflow hidden
-	+below($xl)
-		min-height 69rem
+	height 100vh
+	+below($lg)
+		height auto
 	+above($lg)
 		padding-top 0
 	+above($xl)
 		background-image url(../images/promo-bg/1.jpg)
 		background-size 100%
 		background-position 0 100%
-		min-height 69rem
-	+above($xxl)
-		min-height 100rem
 	&__title
 		padding-top 4.3rem
 		margin-bottom 3.5rem
@@ -92,6 +90,10 @@
 		display flex
 		justify-content center
 		margin-bottom -20px
+		height 100%
+		+below($xl)
+			top 0 
+			margin-bottom 0
 		+above($xl)
 			position absolute
 			top 0

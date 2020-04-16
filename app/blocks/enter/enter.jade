@@ -1,6 +1,6 @@
 mixin enter()
 	+b.popup&attributes(attributes)
-		+e.wrapper
+		+e.wrapper(id="#one" class="active")
 			+e('button').button.button_close(data-fancybox-close)
 				+b('svg').icon_close
 					use(xlink:href="#close")
@@ -31,7 +31,7 @@ mixin enter()
 							+e.button-wrapper
 								+e('button').button.button_success Войти
 							+e.link-wrapper
-								+e('a').link(href="#") Забыли пароль?
+								+e('a').link.reset-pswd(href="javascript:;") Забыли пароль?
 				+e.content
 					+b('form').form(method="post" action="")
 						+e.wrapper
@@ -50,3 +50,15 @@ mixin enter()
 									+e.label(for='id-2') Принимаю пользовательское соглашение
 							+e.button-wrapper
 								+e('button').button.button_success Регистрация
+		+e.wrapper(id="#two" class="hidden")
+			+e('button').button.button_close(data-fancybox-close)
+				+b('svg').icon_close
+					use(xlink:href="#close")
+			+e.content.active
+				+b('form').form(method="post" action="")
+					+e.wrapper
+						+e('p').title Восстановление пароля
+						+e.input-wrapper
+							+e('input').input(type="text" placeholder="Email / Телефон")
+						+e.button-wrapper
+							+e('button').button.button_success Восстановить
