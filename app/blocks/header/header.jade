@@ -22,7 +22,7 @@ mixin header(isLoggined, logo, links)
 							+e('a').link-href(href="#") Вопросы и ответы
 				if !isLoggined
 					+e.login
-						+e('button').login-button.button(data-fancybox data-type="ajax" data-src="./enter.html" href="javascript:;") Вход
+						+e('button').login-button.button Вход
 				else
 					+e.user
 						+e('span').user-name Имя 
