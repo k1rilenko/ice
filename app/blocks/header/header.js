@@ -3,6 +3,7 @@ app.header = {
 	init() {
 		this.changePosition();
 		this.loginPopup();
+		this.showPswdResetForm();
 		
 	},
 	changePosition() {
@@ -15,34 +16,37 @@ app.header = {
 		});
 	},
 
-
-
 	loginPopup() {
 		const headerLoginBtn = document.querySelector('.header__login-button');
-		const showPopup = () => {
-			$.fancybox.open({
-				src: './enter.html',
-				type: 'ajax',
-				opts: {
-					smallBtn: false,
-					toolbar: false,
-					touch: false,
-					padding: 10,
-					backFocus: false,
-					afterClose: function() { 
-						setTimeout(() => {
-							app.slider.ratingSlider.update()
-						}, 500)
-					},
-				}
+			headerLoginBtn.addEventListener('click', (event) => {
+				event.preventDefault();
+				$.fancybox.open({
+					src: './enter.html',
+					type: 'ajax',
+					opts: {
+						smallBtn: false,
+						toolbar: false,
+						touch: false,
+						padding: 10,
+						backFocus: false,
+						afterShow: function() {
+							console.log('opened')
+						}, 
+						afterClose: function() { 
+							console.log('closed')
+							$.fancybox.destroy();
+							setTimeout(() => {
+								app.slider.ratingSlider.update()
+							}, 500)
+						},
+					}
+				});
 			});
-		};
-		
-		headerLoginBtn.addEventListener('click', (event) => {
-			event.preventDefault();
-			showPopup();
-		});
+	},
 
+
+
+	showPswdResetForm() {
 		$(document).ajaxComplete(function () {
 			const resetBtn = document.querySelector('.reset-pswd');
 			const popupWrapper = document.querySelectorAll('.popup__wrapper');
@@ -52,9 +56,9 @@ app.header = {
 			popupWrapper[1].classList.remove('hidden')
 			});
 	});
-
-	}
+	},
 
 
 
 };
+
