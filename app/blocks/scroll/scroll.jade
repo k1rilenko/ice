@@ -1,5 +1,5 @@
 mixin scroll()
 	+b.scroll&attributes(attributes) 
-		+e('a').link(href="#")#scroll-to-top
+		+e('a')#scroll-to-top.link(href="#")
 			+b('svg').icon._arrow
 				use(xlink:href='#arrow') 

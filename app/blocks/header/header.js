@@ -4,7 +4,6 @@ app.header = {
 		this.changePosition();
 		this.loginPopup();
 		this.showPswdResetForm();
-		
 	},
 	changePosition() {
 		window.addEventListener('scroll', () => {
@@ -18,46 +17,37 @@ app.header = {
 
 	loginPopup() {
 		const headerLoginBtn = document.querySelector('.header__login-button');
-			headerLoginBtn.addEventListener('click', (event) => {
-				event.preventDefault();
-				$.fancybox.open({
-					src: './enter.html',
-					type: 'ajax',
-					opts: {
-						smallBtn: false,
-						toolbar: false,
-						touch: false,
-						padding: 10,
-						backFocus: false,
-						afterShow: function() {
-							console.log('opened')
-						}, 
-						afterClose: function() { 
-							console.log('closed')
-							setTimeout(() => {
-								app.slider.ratingSlider.update()
-							}, 500)
-						},
-					}
-				});
+		headerLoginBtn.addEventListener('click', event => {
+			event.preventDefault();
+			$.fancybox.open({
+				src: './enter.html',
+				type: 'ajax',
+				opts: {
+					smallBtn: false,
+					toolbar: false,
+					touch: false,
+					padding: 10,
+					backFocus: false
+				}
 			});
+		});
 	},
 
 
 
 	showPswdResetForm() {
 		$(document).ajaxComplete(function () {
-      const resetBtn = document.querySelector('.reset-pswd');
-      if (!resetBtn) {
-        return;
-      }
-      const popupWrapper = document.querySelectorAll('.popup__wrapper');
-      resetBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        popupWrapper[0].classList.add('hidden')
-        popupWrapper[1].classList.remove('hidden')
-      });
-	})
+			const resetBtn = document.querySelector('.reset-pswd');
+			if (!resetBtn) {
+				return;
+			}
+			const popupWrapper = document.querySelectorAll('.popup__wrapper');
+			resetBtn.addEventListener('click', e => {
+				e.preventDefault();
+				popupWrapper[0].classList.add('hidden');
+				popupWrapper[1].classList.remove('hidden');
+			});
+		});
 	}
 
 

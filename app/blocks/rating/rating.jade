@@ -33,7 +33,7 @@ mixin rating()
 											+e('span').percent= slide.percent + "%"
 											+e('span').point= slide.point + " голосов"
 										+e.button-wrapper
-											+e('button')(data-src="#{slide.background}" data-slide-index="#{index}").button.button._success Голосовать
+											+e('button').button.button._success(data-src="#{slide.background}" data-slide-index="#{index}") Голосовать
  
 					.swiper-pagination
 

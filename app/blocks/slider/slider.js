@@ -181,15 +181,15 @@ app.slider = {
 		loop: true,
 		speed: 1000,
 		allowTouchMove: false,
-    autoplay: {
-      delay: 3000,
-    },
+		autoplay: {
+			delay: 3000
+		},
 		coverflowEffect: {
 			rotate: 0,
 			stretch: 60,
-			depth: 100, 
-			modifier: 1.5, 
-			slideShadows : false,
+			depth: 100,
+			modifier: 1.5,
+			slideShadows: false
 		},
 		navigation: {
 			nextEl: '.rating__slider .swiper-button-next',
@@ -198,10 +198,10 @@ app.slider = {
 		on: {
 			init() {
 				setTimeout(() => {
-					app.slider.ratingSlider.update()
-					app.slider.ratingSlider.slideNext() 
-					app.slider.ratingSlider.autoplay.start(); 
-				}, 500)
+					app.slider.ratingSlider.update();
+					app.slider.ratingSlider.slideNext();
+					app.slider.ratingSlider.autoplay.start();
+				}, 500);
 				const activeIndex = this.activeIndex;
 				const realIndex = this.slides.eq(activeIndex).attr('data-swiper-slide-index');
 				$('.rating__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').prev().prev().addClass('swiper-slide-nth-prev-2');
@@ -214,69 +214,64 @@ app.slider = {
 				$('.rating__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').prev().prev().addClass('swiper-slide-nth-prev-2');
 				$('.rating__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').next().next().addClass('swiper-slide-nth-next-2');
 			}
-		}	
+		}
 	},
-optionsHero: {
-	pagination: '.hero__slider .swiper-pagination',
-	paginationClickable: true,
-	effect: 'coverflow',
-	grabCursor: true,
-	centeredSlides: true,
-	slidesPerView: 'auto',
-	loop: true,
-	speed: 1000,
-    autoplay: {
-      delay: 3000,
-    },
-	coverflowEffect: {
-		rotate: 0,
-		depth: 100, 
-		modifier: 1.5, 
-		slideShadows : false,
-	},
-	navigation: {
-		nextEl: '.hero__slider .swiper-button-next',
-		prevEl: '.hero__slider .swiper-button-prev'
-	},
+	optionsHero: {
+		pagination: '.hero__slider .swiper-pagination',
+		paginationClickable: true,
+		effect: 'coverflow',
+		grabCursor: true,
+		centeredSlides: true,
+		slidesPerView: 'auto',
+		loop: true,
+		speed: 1000,
+		autoplay: {
+			delay: 3000
+		},
+		coverflowEffect: {
+			rotate: 0,
+			depth: 100,
+			modifier: 1.5,
+			slideShadows: false
+		},
+		navigation: {
+			nextEl: '.hero__slider .swiper-button-next',
+			prevEl: '.hero__slider .swiper-button-prev'
+		},
 		breakpoints: {
 			991: {
 				coverflowEffect: {
-					stretch: 80,
-					},
-				},
-			1280: {
-				coverflowEffect: {
-					stretch: 80,
-				},
+					stretch: 80
+				}
 			},
 			1630: {
 				coverflowEffect: {
-					stretch: 60,
-				},
+					stretch: 60
+				}
 			}
 		},
-	on: {
-		init() {
-			setTimeout(() => {
-				app.slider.heroSlider.update()
-				app.slider.heroSlider.slideNext()
-				app.slider.heroSlider.autoplay.start();
-			}, 500)
-			const activeIndex = this.activeIndex;
-			const realIndex = this.slides.eq(activeIndex).attr('data-swiper-slide-index');
-			$('.hero__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').prev().prev().addClass('swiper-slide-nth-prev-2');
-			$('.hero__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').next().next().addClass('swiper-slide-nth-next-2');
-		},
-		slideChange() {
-			const activeIndex = this.activeIndex;
-			const realIndex = this.slides.eq(activeIndex).attr('data-swiper-slide-index');
-			$('.hero__slider .swiper-slide.swiper-slide-nth-prev-2').removeClass('swiper-slide-nth-prev-2');
-			$('.hero__slider .swiper-slide.swiper-slide-nth-next-2').removeClass('swiper-slide-nth-next-2');
-			$('.hero__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').prev().prev().addClass('swiper-slide-nth-prev-2');
-			$('.hero__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').next().next().addClass('swiper-slide-nth-next-2');
+		on: {
+			init() {
+				setTimeout(() => {
+					app.slider.heroSlider.update();
+					app.slider.heroSlider.slideNext();
+					app.slider.heroSlider.autoplay.start();
+				}, 500);
+				const activeIndex = this.activeIndex;
+				const realIndex = this.slides.eq(activeIndex).attr('data-swiper-slide-index');
+				$('.hero__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').prev().prev().addClass('swiper-slide-nth-prev-2');
+				$('.hero__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').next().next().addClass('swiper-slide-nth-next-2');
+			},
+			slideChange() {
+				const activeIndex = this.activeIndex;
+				const realIndex = this.slides.eq(activeIndex).attr('data-swiper-slide-index');
+				$('.hero__slider .swiper-slide.swiper-slide-nth-prev-2').removeClass('swiper-slide-nth-prev-2');
+				$('.hero__slider .swiper-slide.swiper-slide-nth-next-2').removeClass('swiper-slide-nth-next-2');
+				$('.hero__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').prev().prev().addClass('swiper-slide-nth-prev-2');
+				$('.hero__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').next().next().addClass('swiper-slide-nth-next-2');
+			}
 		}
-	}	
-},
+	},
 
 	destroySlider(el, size) {
 		if (!el) {
