@@ -27,6 +27,7 @@ app.slider = {
 				slidesPerView: 1,
 				spaceBetween: 10,
 				grabCursor: true,
+				effect: 'fade',
 				// autoHeight: true,
 				on: {
 					init() {
