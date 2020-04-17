@@ -13,10 +13,10 @@ app.votePopup = {
 					smallBtn: false,
 					toolbar: false,
 					touch: false,
-					padding: 10
+					padding: 10,
 				}
-			});
-		};
+		});
+	}
 
 		for (let i = 0; i < votePopupBtn.length; i++) {
 			let button = votePopupBtn[i];
