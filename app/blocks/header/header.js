@@ -34,7 +34,6 @@ app.header = {
 						}, 
 						afterClose: function() { 
 							console.log('closed')
-							$.fancybox.destroy();
 							setTimeout(() => {
 								app.slider.ratingSlider.update()
 							}, 500)
@@ -48,16 +47,18 @@ app.header = {
 
 	showPswdResetForm() {
 		$(document).ajaxComplete(function () {
-			const resetBtn = document.querySelector('.reset-pswd');
-			const popupWrapper = document.querySelectorAll('.popup__wrapper');
-		resetBtn.addEventListener('click', (e) => {
-			e.preventDefault();
-			popupWrapper[0].classList.add('hidden')
-			popupWrapper[1].classList.remove('hidden')
-			});
-	});
-	},
-
+      const resetBtn = document.querySelector('.reset-pswd');
+      if (!resetBtn) {
+        return;
+      }
+      const popupWrapper = document.querySelectorAll('.popup__wrapper');
+      resetBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        popupWrapper[0].classList.add('hidden')
+        popupWrapper[1].classList.remove('hidden')
+      });
+	})
+	}
 
 
 };
