@@ -4,6 +4,7 @@ app.header = {
 		this.changePosition();
 		this.loginPopup();
 		this.showPswdResetForm();
+		this.linkScrollTo();
 	},
 	changePosition() {
 		window.addEventListener('scroll', () => {
@@ -48,6 +49,21 @@ app.header = {
 				popupWrapper[1].classList.remove('hidden');
 			});
 		});
+	},
+
+	linkScrollTo() {
+		const linkScroll = document.querySelectorAll('.link-scroll-to');
+		for (let i = 0; i < linkScroll.length; i++) {
+			let button = linkScroll[i];
+			button.addEventListener('click', (event) => {
+				event.preventDefault();
+				const blockID = button.getAttribute('href')
+				document.querySelector(blockID).scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				})
+			});
+		}
 	}
 
 

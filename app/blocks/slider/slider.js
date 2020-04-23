@@ -181,9 +181,9 @@ app.slider = {
 		loop: true,
 		speed: 1000,
 		allowTouchMove: false,
-		autoplay: {
-			delay: 3000
-		},
+		// autoplay: {
+		// 	delay: 3000
+		// },
 		coverflowEffect: {
 			rotate: 0,
 			stretch: 60,
@@ -200,7 +200,7 @@ app.slider = {
 				setTimeout(() => {
 					app.slider.ratingSlider.update();
 					app.slider.ratingSlider.slideNext();
-					app.slider.ratingSlider.autoplay.start();
+					// app.slider.ratingSlider.autoplay.start();
 				}, 500);
 				const activeIndex = this.activeIndex;
 				const realIndex = this.slides.eq(activeIndex).attr('data-swiper-slide-index');
@@ -224,10 +224,12 @@ app.slider = {
 		centeredSlides: true,
 		slidesPerView: 'auto',
 		loop: true,
-		speed: 1000,
-		autoplay: {
-			delay: 3000
-		},
+		observer: true,  
+		observeParents: true,
+		// speed: 1000,
+		// autoplay: {
+		// 	delay: 3000
+		// },
 		coverflowEffect: {
 			rotate: 0,
 			depth: 100,
@@ -255,7 +257,6 @@ app.slider = {
 				setTimeout(() => {
 					app.slider.heroSlider.update();
 					app.slider.heroSlider.slideNext();
-					app.slider.heroSlider.autoplay.start();
 				}, 500);
 				const activeIndex = this.activeIndex;
 				const realIndex = this.slides.eq(activeIndex).attr('data-swiper-slide-index');
@@ -263,6 +264,7 @@ app.slider = {
 				$('.hero__slider .swiper-slide[data-swiper-slide-index="' + realIndex + '"]').next().next().addClass('swiper-slide-nth-next-2');
 			},
 			slideChange() {
+				app.slider.heroSlider.updateSize();
 				const activeIndex = this.activeIndex;
 				const realIndex = this.slides.eq(activeIndex).attr('data-swiper-slide-index');
 				$('.hero__slider .swiper-slide.swiper-slide-nth-prev-2').removeClass('swiper-slide-nth-prev-2');
