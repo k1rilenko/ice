@@ -17,7 +17,7 @@ app.giftPopup = {
 			});
 		};
 		for (let i = 0; i < giftPopupBtn.length; i++) {
-			let button = giftPopupBtn[i];
+			const button = giftPopupBtn[i];
 			button.addEventListener('click', (event) => {
 				event.preventDefault();
 				showPopup();
@@ -30,7 +30,7 @@ app.giftPopup = {
 		$(document).ajaxComplete(function () {
 			const giftPopupHeroLink = document.querySelectorAll('.gift-list__link');
 			for (let i = 0; i < giftPopupHeroLink.length; i++) {
-				let link = giftPopupHeroLink[i];
+				const link = giftPopupHeroLink[i];
 				link.addEventListener('click', (event) => {
 					event.preventDefault();
 					const dataSlide = link.dataset.slide;

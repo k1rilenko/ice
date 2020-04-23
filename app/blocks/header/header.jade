@@ -13,16 +13,16 @@ mixin header(isLoggined, logo, links)
 				if !links
 					+e('ul').link
 						+e('li').link-item
-							+e('a').link-href(href="#") Правила
+							+e('a').link-href.link-scroll-to(href="#rules") Правила
 						+e('li').link-item
-							+e('a').link-href(href="#") Призы
+							+e('a').link-href.link-scroll-to(href="#gifts") Призы
 						+e('li').link-item
-							+e('a').link-href(href="#") Герои
+							+e('a').link-href.link-scroll-to(href="#heroes") Герои
 						+e('li').link-item
-							+e('a').link-href(href="#") Вопросы и ответы
+							+e('a').link-href(href="/faq.html") Вопросы и ответы
 				if !isLoggined
 					+e.login
-						+e('button').login-button.button(data-fancybox data-type="ajax" data-src="./enter.html" href="javascript:;") Вход
+						+e('button').login-button.button Вход
 				else
 					+e.user
 						+e('span').user-name Имя 
